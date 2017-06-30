@@ -2,23 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="53820fb4-23c8-4800-93b0-03deacebebb5" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/uipages/Authorisation.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/uisteps/AuthorisationSteps.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/Test1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/Test4.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/uipages/AuthorisationFields.class" afterPath="$PROJECT_DIR$/target/classes/uipages/AuthorisationFields.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/AuthorisationTest.class" afterPath="$PROJECT_DIR$/target/test-classes/AuthorisationTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/Test2.class" afterPath="$PROJECT_DIR$/target/test-classes/Test2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/AppiumDriver/AppDriv.java" afterPath="$PROJECT_DIR$/src/main/java/AppiumDriver/AppDriv.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/AppiumDriver/AppSetup.java" afterPath="$PROJECT_DIR$/src/main/java/AppiumDriver/AppSetup.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/uipages/Authorisation.java" afterPath="$PROJECT_DIR$/src/main/java/uipages/Authorisation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/uipages/AuthorisationFields.java" afterPath="$PROJECT_DIR$/src/main/java/uipages/AuthorisationFields.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/uipages/CreateAkkFields.java" afterPath="$PROJECT_DIR$/src/main/java/uipages/CreateAkkFields.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/uisteps/AuthorisationSteps.java" afterPath="$PROJECT_DIR$/src/main/java/uisteps/AuthorisationSteps.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/AuthorisationTest.java" afterPath="$PROJECT_DIR$/src/test/java/AuthorisationTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/CreateKSID.java" afterPath="$PROJECT_DIR$/src/test/java/CreateKSID.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/Test1.java" afterPath="$PROJECT_DIR$/src/test/java/Test1.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/Test2.java" afterPath="$PROJECT_DIR$/src/test/java/Test2.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,11 +20,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AuthorisationTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AuthorisationTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/AuthorisationTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="94" column="0" lean-forward="true" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+            <state relative-caret-position="335">
+              <caret line="146" column="94" lean-forward="false" selection-start-line="146" selection-start-column="94" selection-end-line="146" selection-end-column="94" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -56,7 +45,7 @@
       <file leaf-file-name="Test2.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/Test2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
+            <state relative-caret-position="-591">
               <caret line="42" column="67" lean-forward="false" selection-start-line="42" selection-start-column="67" selection-end-line="42" selection-end-column="67" />
               <folding />
             </state>
@@ -75,11 +64,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CreateKSID.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CreateKSID.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/CreateKSID.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="4" lean-forward="false" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+            <state relative-caret-position="495">
+              <caret line="100" column="0" lean-forward="true" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -91,7 +80,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/AppiumDriver/AppSetup.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="258">
-              <caret line="34" column="68" lean-forward="false" selection-start-line="34" selection-start-column="68" selection-end-line="34" selection-end-column="68" />
+              <caret line="34" column="69" lean-forward="false" selection-start-line="34" selection-start-column="69" selection-end-line="34" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -120,8 +109,8 @@
       <file leaf-file-name="AuthorisationFields.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/uipages/AuthorisationFields.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="26" selection-end-column="92" />
+            <state relative-caret-position="167">
+              <caret line="39" column="63" lean-forward="false" selection-start-line="39" selection-start-column="63" selection-end-line="39" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -162,17 +151,17 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/test/java/Test3.java" />
-        <option value="$PROJECT_DIR$/src/main/java/uipages/AuthorisationFields.java" />
-        <option value="$PROJECT_DIR$/src/test/java/AuthorisationTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/GreateKSID.java" />
         <option value="$PROJECT_DIR$/src/main/java/uipages/Authorisation.java" />
         <option value="$PROJECT_DIR$/src/main/java/uisteps/AuthorisationSteps.java" />
         <option value="$PROJECT_DIR$/src/test/java/Test1.java" />
         <option value="$PROJECT_DIR$/src/main/java/uipages/CreateAkkFields.java" />
-        <option value="$PROJECT_DIR$/src/main/java/AppiumDriver/AppSetup.java" />
         <option value="$PROJECT_DIR$/src/main/java/AppiumDriver/AppDriv.java" />
         <option value="$PROJECT_DIR$/src/test/java/Test2.java" />
         <option value="$PROJECT_DIR$/src/test/java/CreateKSID.java" />
+        <option value="$PROJECT_DIR$/src/main/java/uipages/AuthorisationFields.java" />
+        <option value="$PROJECT_DIR$/src/test/java/AuthorisationTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/AppiumDriver/AppSetup.java" />
       </list>
     </option>
   </component>
@@ -379,7 +368,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.CreateKSID">
+  <component name="RunManager" selected="TestNG.AuthorisationTest">
     <configuration default="false" name="AuthorisationTest" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="KSSign" />
@@ -733,10 +722,10 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="TestNG.CreateKSID" />
-        <item index="1" class="java.lang.String" itemvalue="TestNG.AuthorisationTest.checkTermsAndConditions" />
-        <item index="2" class="java.lang.String" itemvalue="TestNG.AuthorisationTest" />
-        <item index="3" class="java.lang.String" itemvalue="TestNG.AuthorisationTest.checkForgotPass" />
+        <item index="0" class="java.lang.String" itemvalue="TestNG.AuthorisationTest" />
+        <item index="1" class="java.lang.String" itemvalue="TestNG.CreateKSID" />
+        <item index="2" class="java.lang.String" itemvalue="TestNG.AuthorisationTest.checkForgotPass" />
+        <item index="3" class="java.lang.String" itemvalue="TestNG.AuthorisationTest.checkTermsAndConditions" />
         <item index="4" class="java.lang.String" itemvalue="TestNG.AuthorisationTest.failToSignIn" />
       </list>
     </recent_temporary>
@@ -755,20 +744,17 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AuthorisationTest - 2017.06.30 at 13h 52m 42s.xml">
+    <history-entry file="AuthorisationTest - 2017.06.30 at 18h 32m 30s.xml">
       <configuration name="AuthorisationTest" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="AuthorisationTest - 2017.06.30 at 13h 57m 00s.xml">
+    <history-entry file="AuthorisationTest - 2017.06.30 at 18h 47m 03s.xml">
       <configuration name="AuthorisationTest" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="AuthorisationTest_checkForgotPass - 2017.06.30 at 13h 28m 32s.xml">
+    <history-entry file="AuthorisationTest - 2017.06.30 at 18h 53m 52s.xml">
+      <configuration name="AuthorisationTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="AuthorisationTest_checkForgotPass - 2017.06.30 at 18h 36m 15s.xml">
       <configuration name="AuthorisationTest.checkForgotPass" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="AuthorisationTest_checkTermsAndConditions - 2017.06.30 at 14h 24m 31s.xml">
-      <configuration name="AuthorisationTest.checkTermsAndConditions" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="CreateKSID - 2017.06.30 at 17h 16m 27s.xml">
-      <configuration name="CreateKSID" configurationId="TestNG" />
     </history-entry>
     <history-entry file="CreateKSID - 2017.06.30 at 17h 19m 22s.xml">
       <configuration name="CreateKSID" configurationId="TestNG" />
@@ -783,6 +769,9 @@
       <configuration name="CreateKSID" configurationId="TestNG" />
     </history-entry>
     <history-entry file="CreateKSID - 2017.06.30 at 17h 39m 10s.xml">
+      <configuration name="CreateKSID" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CreateKSID - 2017.06.30 at 18h 39m 40s.xml">
       <configuration name="CreateKSID" configurationId="TestNG" />
     </history-entry>
   </component>
@@ -907,22 +896,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/AppiumDriver/AppSetup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="34" column="68" lean-forward="false" selection-start-line="34" selection-start-column="68" selection-end-line="34" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/uipages/AuthorisationFields.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="26" selection-end-column="92" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uipages/CreateAkkFields.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -951,26 +924,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Test2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
+        <state relative-caret-position="-591">
           <caret line="42" column="67" lean-forward="false" selection-start-line="42" selection-start-column="67" selection-end-line="42" selection-end-column="67" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/AuthorisationTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/uipages/AuthorisationFields.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="94" column="0" lean-forward="true" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+        <state relative-caret-position="167">
+          <caret line="39" column="63" lean-forward="false" selection-start-line="39" selection-start-column="63" selection-end-line="39" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/CreateKSID.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="100" column="0" lean-forward="true" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/CreateKSID.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/AppiumDriver/AppSetup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="4" lean-forward="false" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+        <state relative-caret-position="258">
+          <caret line="34" column="69" lean-forward="false" selection-start-line="34" selection-start-column="69" selection-end-line="34" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/AuthorisationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="146" column="94" lean-forward="false" selection-start-line="146" selection-start-column="94" selection-end-line="146" selection-end-column="94" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

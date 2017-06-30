@@ -134,6 +134,7 @@ public class AuthorisationTest extends FindUI{
     @Test(priority = 5)
     public void checkForgotPass(){
 
+        waitByName(AuthorisationFields.authForgotPass());
         findByName(AuthorisationFields.authForgotPass()).click();
         waitByName(AuthorisationFields.authPasswordRecovery());
         findByXpath(AuthorisationFields.authRecoveryTextField()).sendKeys("wse1@mailinator.com");

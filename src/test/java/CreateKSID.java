@@ -18,12 +18,12 @@ public class CreateKSID extends FindUI{
         wait = new WebDriverWait(driver,1500);
     }
 
-    public static String createEmail = "ff2fqwer@binka.me";
+    public static String createEmail = "ff2f1qwer@binka.me";
     public static String createPass = "qwerty";
     public static String firstName = "Johny";
     public static String lastName = "Best";
     public static String company = "KS";
-    
+
     @Test(priority = 1)
     public void checkUiOfCreateKSScreen(){
 
