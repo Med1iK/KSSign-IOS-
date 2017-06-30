@@ -1,4 +1,4 @@
-package uisteps;
+/*package uisteps;
 
 
 import net.thucydides.core.annotations.Step;
@@ -29,4 +29,4 @@ public class AuthorisationSteps {
         authorisation.ClickOnLoginButton();
     }
 
-}
+}*/

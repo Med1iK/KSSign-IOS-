@@ -1,3 +1,4 @@
+/*
 package uipages;
 
 
@@ -58,3 +59,4 @@ public class Authorisation{
         this.DoneButton.click();
     }
 }
+*/
