@@ -1,4 +1,5 @@
-/*import AppiumDriver.AppSetup;
+/*
+import AppiumDriver.AppSetup;
 import net.thucydides.core.annotations.Steps;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
@@ -16,11 +17,11 @@ public class Test1 extends AppSetup{
     @BeforeSuite
     public void Start() {Setup();}
 
-*//*
+
     public void ffff(){
         appSetup.driver.findElement()
 
-    }*//*
+    }
 
 
     @Steps
@@ -37,4 +38,5 @@ public class Test1 extends AppSetup{
     }
 
 
-}*/
+}
+*/

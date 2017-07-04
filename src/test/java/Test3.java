@@ -1,8 +1,12 @@
 import findElementMethod.FindUI;
+import io.appium.java_client.TouchAction;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import uipages.AuthorisationFields;
+import uipages.DocumentListFields;
+import uipages.UpdateInfoFields;
 
 import java.net.MalformedURLException;
 
@@ -18,60 +22,32 @@ public class Test3 extends FindUI {
         wait = new WebDriverWait(driver,1500);
     }
 
+
     @Test(priority = 1)
-    public void checkAllUiElement(){
+    public void auth(){
 
-        findByName(AuthorisationFields.authTitle());
-        System.out.println("Title has been checked");
-        findByName(AuthorisationFields.authLogo());
-        System.out.println("Logo has been checked");
-        findByName(AuthorisationFields.authEmail());
-        System.out.println("Email field has been checked");
-        findByName(AuthorisationFields.authPass());
-        System.out.println("Pass field has been checked");
-        findByName(AuthorisationFields.authSignInButton());
-        System.out.println("SignIn button has been checked");
-        findByName(AuthorisationFields.authRememberPass());
-        System.out.println("Remember password field has been checked");
-        findByName(AuthorisationFields.authForgotPass());
-        System.out.println("Forgot pass field has been checked");
-        findByName(AuthorisationFields.authCreateNewKSID());
-        System.out.println("Create new KS ID field has been checked");
-        findByName(AuthorisationFields.authBySignInYouAgree());
-        System.out.println("By signing in, you agree to our - has been checked");
-        findByName(AuthorisationFields.authTermsConditions());
-        System.out.println("Terms and Conditions field has bee checked");
-
+        waitByName(UpdateInfoFields.updateInfoEmail());
+        findByName(UpdateInfoFields.updateInfoEmail()).click();
+        findByName(UpdateInfoFields.updateInfoEmail()).sendKeys("wse1@mailinator.com");
+        findByName(UpdateInfoFields.updateInfoPass()).sendKeys("qwerty");
+        findByName(UpdateInfoFields.updateKSIDLogo()).click();
+        findByName(UpdateInfoFields.updateInfoSignInButton()).click();
     }
 
     @Test(priority = 2)
-    public void checkRememberPassFunctionality(){
+    public void longTap(){
 
-        waitByName(AuthorisationFields.authEmail());
-        findByName(AuthorisationFields.authEmail()).click();
-        findByName(AuthorisationFields.authEmail()).sendKeys("wse1@mailinator.com");
-        findByName(AuthorisationFields.authPass()).sendKeys("qwerty");
-        findByName(AuthorisationFields.authLogo()).click();
-        findByName(AuthorisationFields.authSignInButton()).click();
-        waitByName(AuthorisationFields.authMenuIcon());
-        findByName(AuthorisationFields.authMenuIcon()).click();
-        waitByName(AuthorisationFields.authSynced());
-        runAppInBAckground();
-        waitByName(AuthorisationFields.authRecoveryDetailsMail());
-        findByName(AuthorisationFields.authPass()).click();
-        findByName(AuthorisationFields.authPass()).sendKeys("qwerty");
-        findByName(AuthorisationFields.authLogo()).click();
-        findByName(AuthorisationFields.authRememberPass()).click();
-        findByName(AuthorisationFields.authSignInButton()).click();
-        waitByName(AuthorisationFields.authMenuIcon());
-       // findByName(AuthorisationFields.authMenuIcon()).click();
-        waitByName(AuthorisationFields.authSynced());
-        runAppInBAckground();
-        waitByName(AuthorisationFields.authMenuIcon());
-        waitByName(AuthorisationFields.authSynced());
-        findByName(AuthorisationFields.authLogout()).click();
-        waitByName(AuthorisationFields.authAreYouSureLogout());
-        findByName(AuthorisationFields.authLogout()).click();
+        TouchAction longPress = new TouchAction(driver);
+
+        waitByName(UpdateInfoFields.updateMenuIcon());
+        waitByName(DocumentListFields.documentPreview());
+        System.out.println("Checked1");
+        findByName(DocumentListFields.documentPreview());
+        System.out.println("Checked2");
+        longPress.longPress(findByName(DocumentListFields.documentPreview())).perform();
+
+        longPress.longPress(findByName(DocumentListFields.documentMenuSearchButton())).waitAction(111).moveTo(findByName(DocumentListFields.documentMenuSearchButton())).perform().release();
 
     }
+
 }

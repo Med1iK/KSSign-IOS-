@@ -1,4 +1,5 @@
 import findElementMethod.FindUI;
+import io.appium.java_client.TouchAction;
 import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.touch.UpAction;
 import org.openqa.selenium.remote.server.handler.interactions.touch.Up;
@@ -112,6 +113,6 @@ public class UpdateInfoScreen extends FindUI{
         waitByName(UpdateInfoFields.updateInfoLogOutTitle());
         findByName(UpdateInfoFields.updateInfoLogOutMEssage());
         findByName(UpdateInfoFields.updateInfoLogOutButton()).click();
+        findByName(UpdateInfoFields.updateInfoLogOutButton()).click();
     }
-
 }
