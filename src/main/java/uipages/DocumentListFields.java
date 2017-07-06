@@ -62,8 +62,16 @@ public class DocumentListFields {
     public static String cropDetectBorderButton(){ return "Detect borders";}
     public static String prepareDoc(){ return "PrepearingDocumentIcon";}
     public static String unDoc(){ return "Unnamed";}
-    public static String annotation(){ return "//XCUIElementTypeApplication[@name=\"KeepSolid Sign\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeImage/XCUIElementTypeOther/XCUIElementTypeOther[2]";}
-    private static String resize(){ return "ResizeArrowsIcon"; }
+    public static String annotation(){ return "//XCUIElementTypeApplication[@name=\"KeepSolid Sign\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeImage[1]/XCUIElementTypeOther/XCUIElementTypeOther[2]";}
+    public static String annotation2(){ return "//XCUIElementTypeApplication[@name=\"KeepSolid Sign\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeImage[2]/XCUIElementTypeOther/XCUIElementTypeOther[2]";}
+    public static String resize(){ return "ResizeArrowsIcon"; }
+    public static String elementTypeSlider(){ return "//XCUIElementTypeApplication[@name=\"KeepSolid Sign\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeSlider"; }
+    public static String colourImageSliderElement2(){ return "//XCUIElementTypeApplication[@name=\"KeepSolid Sign\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]"; }
+    public static String cropImageView(){ return "//XCUIElementTypeApplication[@name=\"KeepSolid Sign\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell/XCUIElementTypeOther[2]"; }
+    public static String cropController(){ return "/private/var/mobile/Containers/Data/Application/B175C733-1843-45EA-A5C1-493E9C132053/tmp/505EA9E9-13A7-4FF8-B66B-DF4C1C0FE831";}
+    public static String documentView(){ return "//XCUIElementTypeApplication[@name=\"KeepSolid Sign\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeOther";}
+    public static String documentView2(){ return "//XCUIElementTypeApplication[@name=\"KeepSolid Sign\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther";}
+
 
 
 }
