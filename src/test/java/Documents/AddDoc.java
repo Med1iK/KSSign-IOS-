@@ -97,7 +97,7 @@ public class AddDoc extends FindUI {
     int t2 = 30;
     int t3 = 40;
 
-/*    @Test(priority = 2)
+    @Test(priority = 2)
     public void addDocFromScan() {
 
         TouchAction action = new TouchAction(driver);
@@ -120,9 +120,11 @@ public class AddDoc extends FindUI {
         Dimension size = slider.getSize();
         Point sizeL = slider.getLocation();
 
-*//*        TouchAction swipe = new TouchAction(driver).press(slider, size.width / 8, size.height /118 )
+        TouchAction swipe = new TouchAction(driver).press(slider, size.width / 8, size.height /118 )
                 .waitAction(Duration.ofSeconds(2)).moveTo(slider, 390, size.height / 627).release();
-        swipe.perform();*//*        TouchAction swipe = new TouchAction(driver).press(slider, sizeL.x=8, sizeL.y=118 )
+        swipe.perform();
+
+        TouchAction swipe1 = new TouchAction(driver).press(slider, sizeL.x=8, sizeL.y=118 )
                 .waitAction(Duration.ofSeconds(2)).moveTo(slider, sizeL.x=390, sizeL.y=627).release();
         swipe.perform();
 
@@ -132,11 +134,11 @@ public class AddDoc extends FindUI {
         waitByXpath(DocumentListFields.elementTypeSlider());
 
 
-    }*/
+    }
 
 
     @Test(priority = 1)
-    public void test(){
+    public void movingAnnotation(){
 
             TouchAction action = new TouchAction(driver);
             Actions builder = new Actions(driver);
