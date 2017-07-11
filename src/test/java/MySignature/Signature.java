@@ -9,7 +9,7 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import uipages.MySignatureFields;
+import uipages.MySign.MySignatureFields;
 
 import java.net.MalformedURLException;
 import java.time.Duration;
@@ -55,7 +55,6 @@ public class Signature extends FindUI{
 
         }
     }
-
 
 
     @Test(priority = 2)
@@ -117,8 +116,7 @@ public class Signature extends FindUI{
         findByName(MySignatureFields.signBlueColor());
         System.out.println("Blue color has been located");
         findByName(MySignatureFields.signBlackColor()).click();
-}
-
+    }
 
     @Test(priority = 4)
     public void checDrawingFunctionality(){
@@ -226,7 +224,7 @@ public class Signature extends FindUI{
 
         findByName(MySignatureFields.signNavigationOkButton()).click();
         waitByName(MySignatureFields.signImageOption());
-        findByName(MySignatureFields.signNavigationOkButton()).click();
+        waitByName(MySignatureFields.signNavigationOkButton()).click();
         waitByName(MySignatureFields.signLabelOfMySignView()).click();
 
         if (findByName(MySignatureFields.signBlackColor()).isDisplayed()) {

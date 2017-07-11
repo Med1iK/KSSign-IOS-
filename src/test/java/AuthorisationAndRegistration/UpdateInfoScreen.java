@@ -1,12 +1,10 @@
+package AuthorisationAndRegistration;
+
 import findElementMethod.FindUI;
-import io.appium.java_client.TouchAction;
-import org.openqa.selenium.By;
-import org.openqa.selenium.interactions.touch.UpAction;
-import org.openqa.selenium.remote.server.handler.interactions.touch.Up;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import uipages.UpdateInfoFields;
+import uipages.AuthReg.UpdateInfoFields;
 
 import java.net.MalformedURLException;
 

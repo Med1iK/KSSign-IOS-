@@ -4,17 +4,14 @@ package Documents;
 import findElementMethod.FindUI;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
-import org.apache.commons.io.output.TaggedOutputStream;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.interactions.*;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import uipages.AuthorisationFields;
-import uipages.DocumentListFields;
+import uipages.Documents.DocumentListFields;
 
-import javax.print.Doc;
 import java.net.MalformedURLException;
 import java.time.Duration;
 

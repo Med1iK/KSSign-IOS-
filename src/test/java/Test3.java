@@ -1,12 +1,10 @@
 import findElementMethod.FindUI;
 import io.appium.java_client.TouchAction;
-import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import uipages.AuthorisationFields;
-import uipages.DocumentListFields;
-import uipages.UpdateInfoFields;
+import uipages.Documents.DocumentListFields;
+import uipages.AuthReg.UpdateInfoFields;
 
 import java.net.MalformedURLException;
 

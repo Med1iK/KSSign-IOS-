@@ -1,4 +1,4 @@
-package uipages;
+package uipages.AuthReg;
 
 
 public class CreateAkkFields {

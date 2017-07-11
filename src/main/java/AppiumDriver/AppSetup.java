@@ -29,10 +29,10 @@ public class AppSetup {
         capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "10.3.1");
 
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Andrew's IPhone");
-        capabilities.setCapability(MobileCapabilityType.UDID, "");
+        capabilities.setCapability(MobileCapabilityType.UDID, "5615d22ed37d0153130c08834f0894a49e4306f8");
 
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "XCUITest");
-        capabilities.setCapability(MobileCapabilityType.APP, "");
+        capabilities.setCapability(MobileCapabilityType.APP, "com.simplexsolutionsinc.signdocuments");
 
         capabilities.setCapability("showXcodeLog", "true");
         // capabilities.setCapability("autoAcceptAlerts", "true");

@@ -1,4 +1,4 @@
-package uipages;
+package uipages.Documents;
 
 
 public class DocumentListFields {

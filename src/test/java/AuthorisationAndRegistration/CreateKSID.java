@@ -1,8 +1,10 @@
+package AuthorisationAndRegistration;
+
 import findElementMethod.FindUI;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import uipages.CreateAkkFields;
+import uipages.AuthReg.CreateAkkFields;
 
 import java.net.MalformedURLException;
 
