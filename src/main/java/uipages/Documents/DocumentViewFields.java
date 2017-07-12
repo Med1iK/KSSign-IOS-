@@ -5,6 +5,13 @@ package uipages.Documents;
 
 public class DocumentViewFields {
 
+    public static String docViewMenuIcon(){ return "MenuIcon";}
+    public static String docViewSynced(){return "Synced";}
+    public static String docViewNoDocumenttsPlaceholderIcon(){ return "NoDocumenttsPlaceholderIcon";}
+    public static String docAddDocPlusButton(){ return "ContactInviteButton";}
+    public static String docAddDocCameraButton(){ return "Camera";}
+    public static String docUnnamedTitle(){ return "Unnamed";}
+
     public static String docViewNavigationBackButton(){return "NavigationBackButton";}
     public static String docViewNavigationSendButton(){return "Send";}
     public static String docViewAddAnnotationButton(){return "RoundedAddAnnotationIcon";}
@@ -55,6 +62,21 @@ public class DocumentViewFields {
     public static String contactAddContactErrorMessagePopupIcon(){return "ErrorMessagePopupIcon";}
     public static String contactAddContaсtFail(String key){return "Failed to create a contact. Probably invalid email address:"+ key;}
     public static String contactImportContact(){return "Import Contacts";}
+
+
+    public static String cameraButton(){return "//XCUIElementTypeApplication[@name=\"KeepSolid Sign\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeOther[6]/XCUIElementTypeButton";}
+
+    public static String cameraGetPhoto(){return "GetPhotoButton";}
+    public static String cameraNavigationOkButton(){return "NavigationOkButton";}
+
+    public static String docInfoNextButton(){ return "Next";}
+    public static String userwse3mailinator(){ return "wse3@mailinator.com";}
+    public static String contactInviteAsSigner(){return "Invite as a signer";}
+    public static String contactInviteAsObserver(){ return "Invite as an observer";}
+    public static String signerWse3(){ return "Wse 3";}
+
+
+
 
 
 }
