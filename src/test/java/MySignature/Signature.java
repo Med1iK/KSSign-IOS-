@@ -116,13 +116,16 @@ public class Signature extends FindUI{
         findByName(MySignatureFields.signBlueColor());
         System.out.println("Blue color has been located");
         findByName(MySignatureFields.signBlackColor()).click();
+        findByName(MySignatureFields.signNavigationCloseButton()).click();
     }
 
     @Test(priority = 4)
-    public void checDrawingFunctionality(){
+    public void checPencilFunctionality(){
 
         TouchAction action = new TouchAction(driver);
         TouchAction action2 = new TouchAction(driver);
+
+        findByName(MySignatureFields.signLabelOfMySignView()).click();
 
        // waitByXpath(MySignatureFields.signDrawSignWindow());
         MobileElement sign1 = (MobileElement) findByName(MySignatureFields.signDrawingView());
@@ -149,6 +152,76 @@ public class Signature extends FindUI{
     }
 
     @Test(priority = 5)
+    public void checkEaserFunctionality(){
+
+        TouchAction action = new TouchAction(driver);
+        TouchAction action2 = new TouchAction(driver);
+
+        findByName(MySignatureFields.signLabelOfMySignView()).click();
+        findByName(MySignatureFields.signPencilTool()).click();
+        findByName(MySignatureFields.signEaserTool()).click();
+
+        MobileElement sign1 = (MobileElement) findByName(MySignatureFields.signDrawingView());
+
+        int signWidth = sign1.getSize().getWidth();
+        int signHeight = sign1.getSize().getHeight();
+        System.out.println("Width"+signWidth);
+        System.out.println("Heigh"+signHeight);
+
+
+        action
+                .press(sign1,1,1)
+                .waitAction(111)
+                .moveTo(sign1, signWidth, signHeight)
+                .release().perform();
+
+        action2
+                .press(sign1,1,signHeight-1)
+                .waitAction(111)
+                .moveTo(sign1,signWidth-1,1)
+                .release().perform();
+
+        findByName(MySignatureFields.signNavigationOkButton()).click();
+
+    }
+
+    @Test(priority = 6)
+    public void checkBrushFunctionality(){
+
+        TouchAction action = new TouchAction(driver);
+        TouchAction action2 = new TouchAction(driver);
+
+
+        findByName(MySignatureFields.signLabelOfMySignView()).click();
+        findByName(MySignatureFields.signPencilTool()).click();
+        findByName(MySignatureFields.signBrushTool()).click();
+
+        MobileElement sign1 = (MobileElement) findByName(MySignatureFields.signDrawingView());
+
+        int signWidth = sign1.getSize().getWidth();
+        int signHeight = sign1.getSize().getHeight();
+        System.out.println("Width"+signWidth);
+        System.out.println("Heigh"+signHeight);
+
+
+        action
+                .press(sign1,1,1)
+                .waitAction(111)
+                .moveTo(sign1, signWidth, signHeight)
+                .release().perform();
+
+        action2
+                .press(sign1,1,signHeight-1)
+                .waitAction(111)
+                .moveTo(sign1,signWidth-1,1)
+                .release().perform();
+
+        findByName(MySignatureFields.signNavigationOkButton()).click();
+
+
+    }
+
+    @Test(priority = 7)
     public void checkSignColor(){
 
         findByName(MySignatureFields.signLabelOfMySignView()).click();
@@ -197,13 +270,14 @@ public class Signature extends FindUI{
 
             findByName(MySignatureFields.signBlueColor()).isDisplayed();
             System.out.println("Blue color has been checked");
-            findByName(MySignatureFields.signPencilTool()).click();
+            findByName(MySignatureFields.signBrushTool()).click();
             findByName(MySignatureFields.signEaserAll()).click();
             findByName(MySignatureFields.signNavigationOkButton()).click();
         }
     }
 
-    @Test(priority = 6)
+
+    @Test(priority = 8)
     public void createSignByCamera(){
 
         findByName(MySignatureFields.signLabelOfMySignView()).click();
@@ -232,7 +306,8 @@ public class Signature extends FindUI{
         }else {
             System.out.println(ANSI_RED + "BUG! MY SIGN COLOUR SHOULD BE BLACK!");
         }
-        //findByName(MySignatureFields.signNavigationCloseButton()).click();
+
+        findByName(MySignatureFields.signNavigationCloseButton()).click();
 
     }
 }

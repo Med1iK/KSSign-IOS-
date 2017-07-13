@@ -51,35 +51,32 @@ public class UI extends FindUI {
         }
     }
 
-    @Test(enabled = false)
+    @Test(priority = 2)
     public void checkAvailabilityOfTheDoc(){
 
         waitByName(DocumentViewFields.docViewMenuIcon()).click();
         waitByName(DocumentViewFields.docViewSynced());
         findByName(DocumentViewFields.docViewMenuIcon()).click();
 
-        if(findByName(DocumentViewFields.docViewNoDocumenttsPlaceholderIcon()).isDisplayed()){
+        try{
+            findByName(DocumentViewFields.docViewNoDocumenttsPlaceholderIcon()).isDisplayed();
             findByName(DocumentViewFields.docAddDocPlusButton()).click();
-        }
+            findByXpath(DocumentViewFields.cameraButton()).click();
+            waitByName(DocumentViewFields.cameraGetPhoto()).click();
+            findByName(DocumentViewFields.cameraNavigationOkButton()).click();
+            waitByName(DocumentViewFields.cameraNavigationOkButton()).click();
+            waitByName(DocumentViewFields.cameraNavigationOkButton()).click();
+            waitByName(DocumentViewFields.docInfoNextButton()).click();
 
-        findByName(DocumentViewFields.docAddDocPlusButton()).click();
-        findByXpath(DocumentViewFields.cameraButton()).click();
-        waitByName(DocumentViewFields.cameraGetPhoto()).click();
-        findByName(DocumentViewFields.cameraNavigationOkButton()).click();
-        waitByName(DocumentViewFields.cameraNavigationOkButton()).click();
-        waitByName(DocumentViewFields.cameraNavigationOkButton()).click();
-        waitByName(DocumentViewFields.docInfoNextButton()).click();
+        }catch (NoSuchElementException f) {
+
+            findByName(DocumentViewFields.docUnnamedTitle()).click();
+            waitByName(DocumentViewFields.docInfoNextButton()).click();
+        }
     }
 
     @Test(priority = 3)
     public void checkUIOfDocView(){
-
-        waitByName(DocumentViewFields.docViewMenuIcon()).click();
-        //  waitByName(DocumentViewFields.docViewSynced());
-        //  findByName(DocumentViewFields.docViewMenuIcon()).click();
-
-        findByName(DocumentViewFields.docUnnamedTitle()).click();
-        waitByName(DocumentViewFields.docInfoNextButton()).click();
 
         waitByName(DocumentViewFields.docUnnamedTitle());
         System.out.println("Doc view Title has been checked");

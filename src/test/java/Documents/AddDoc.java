@@ -145,8 +145,8 @@ public class AddDoc extends FindUI {
             waitByXpath(DocumentListFields.annotation());
 
         MobileElement slider = (MobileElement) findByXpath(DocumentListFields.documentView());
-        MobileElement slider1 = (MobileElement) findByXpath(DocumentListFields.documentView());
-        MobileElement slider2 = (MobileElement) findByXpath(DocumentListFields.annotation2());
+    //    MobileElement slider1 = (MobileElement) findByXpath(DocumentListFields.documentView());
+    //    MobileElement slider2 = (MobileElement) findByXpath(DocumentListFields.annotation2());
         Dimension size = slider.getSize();
         Point sizeL = slider.getLocation();
 

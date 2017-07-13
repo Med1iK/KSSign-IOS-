@@ -40,6 +40,7 @@ public class AddAnnotations extends FindUI{
 
         try{
             findByName(DocumentViewFields.userwse3mailinator()).isDisplayed();
+
         }catch(NoSuchElementException f){
             findByName(DocumentViewFields.contactInviteButton()).click();
             waitByName(DocumentViewFields.contactAddByEmail()).click();

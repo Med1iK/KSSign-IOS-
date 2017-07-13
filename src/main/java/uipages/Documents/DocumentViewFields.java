@@ -65,9 +65,30 @@ public class DocumentViewFields {
 
 
     public static String cameraButton(){return "//XCUIElementTypeApplication[@name=\"KeepSolid Sign\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeOther[6]/XCUIElementTypeButton";}
+    public static String documentView(){ return "//XCUIElementTypeApplication[@name=\"KeepSolid Sign\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther";}
+    public static String docAnnotationView(){ return "//XCUIElementTypeApplication[@name=\"KeepSolid Sign\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeCell/XCUIElementTypeOther/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeImage[1]/XCUIElementTypeOther/XCUIElementTypeOther[1]";}
+
+    public static String docViewCreateSign(){ return "Create Signature";}
+    public static String docViewDrawingView(){ return "drawingView";}
+    public static String docViewNavigOkButton(){ return "NavigationOkButton";}
+    public static String docViewSaveSignatureTitle(){ return "Save Signature";}
+    public static String docViewSaveSignatureMessage(){ return "Would you like to save the signature for your account for the further use?";}
+    public static String docViewDontSaveAction(){ return "Don't save";}
+    public static String docViewSaveAction(){ return "Save";}
+    public static String docViewNavigCloseButton(){return "NavigationCloseButton";}
+    public static String docMySignMenuButton(){ return "My Signature";}
+    public static String docMySignView(){ return "mySignView";}
+    public static String docSignPencilTool(){ return "PencilIcon";}
+    public static String docSignEaserAll(){ return "EraseAllIcon";}
+    public static String documentsMenuButton(){ return "Documents";}
+    public static String docSignAnnotationResizeIcon(){ return "ResizeArrowsIcon";}
+
+
+
 
     public static String cameraGetPhoto(){return "GetPhotoButton";}
     public static String cameraNavigationOkButton(){return "NavigationOkButton";}
+
 
     public static String docInfoNextButton(){ return "Next";}
     public static String userwse3mailinator(){ return "wse3@mailinator.com";}
