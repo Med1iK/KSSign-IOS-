@@ -4,6 +4,7 @@ package Documents.DocumentView;
 import findElementMethod.FindUI;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -70,12 +71,12 @@ public class Annotations extends FindUI{
         action
                 .press(annotation, size.width/2, size.height/2)
                 .waitAction(11)
-                .moveTo(annotation, size.width/100, size.height/100)
+                .moveTo(annotation, 1, 1)
                 .release()
                 .perform();
 
         action1
-                .press(annotation, size.width/100, size.height/100)
+                .press(annotation, 1, 1)
                 .release()
                 .perform();
 
@@ -100,9 +101,15 @@ public class Annotations extends FindUI{
                 .perform();
 
         findByName(DocumentViewFields.docViewNavigOkButton()).click();
+
+
+        //Don't forget to remove
+        waitByName(DocumentViewFields.docViewSaveSignatureTitle());
+        findByName(DocumentViewFields.docViewSaveSignatureMessage());
+        findByName(DocumentViewFields.docViewDontSaveAction()).click();
     }
 
-    @Test(priority = 2)
+    @Test(enabled = false)
     public void checkSaveSignaturePopup(){
 
         TouchAction action = new TouchAction(driver);
@@ -143,7 +150,7 @@ public class Annotations extends FindUI{
         }
     }
 
-    @Test(priority = 3)
+    @Test(enabled = false)
     public void checkResizeOfSignatureAnnotation(){
 
         TouchAction action = new TouchAction(driver);
@@ -156,14 +163,14 @@ public class Annotations extends FindUI{
         action
                 .press(signatureResize)
                 .waitAction(111)
-                .moveTo(signatureResize, resizeIcon.width+10, resizeIcon.height+10)
+                .moveTo(signatureResize, resizeIcon.width+200, resizeIcon.height+200)
                 .release()
                 .perform();
 
         action1
-                .press(signatureResize, resizeIcon.width+10, resizeIcon.height+10)
+                .press(signatureResize)
                 .waitAction(111)
-                .moveTo(signatureResize, resizeIcon.width-10, resizeIcon.height-10)
+                .moveTo(signatureResize, resizeIcon.width-200, resizeIcon.height-200)
                 .release()
                 .perform();
 
@@ -171,11 +178,13 @@ public class Annotations extends FindUI{
 
 
 
-/*    @Test(priority = 3)
+    @Test(enabled = false)
     public void checkFunctionalityOFInitialsAnnotation(){
 
         TouchAction action = new TouchAction(driver);
         TouchAction action1 = new TouchAction(driver);
+        TouchAction action2 = new TouchAction(driver);
+        TouchAction action3 = new TouchAction(driver);
 
         waitByName(DocumentViewFields.docViewAddAnnotationButton()).click();
         findByName(DocumentViewFields.docViewInitialsAnnotation()).click();
@@ -193,18 +202,130 @@ public class Annotations extends FindUI{
         action
                 .press(docView, size.width/2, size.height/2)
                 .waitAction(11)
-                .moveTo(docView, size.width/100, size.height/100+annotationSize.height+5)
+                .moveTo(docView, 1, 7+annotationSize.height)
                 .release()
                 .perform();
 
-*//*
+
         action1
-                .press(docView, size.width/100, size.height/100)
+                .press(docView, 1, 7+annotationSize.height)
                 .release()
                 .perform();
-*//*
 
-    }*/
+        waitByName(DocumentViewFields.docViewCreateInitials());
+
+        MobileElement sign = (MobileElement) findByName(MySignatureFields.signDrawingView());
+        Dimension drawSize = sign.getSize();
+        System.out.println("Draw size" + drawSize);
+
+        action2
+                .press(sign,drawSize.width/drawSize.width,drawSize.height/drawSize.height)
+                .waitAction(111)
+                .moveTo(sign, drawSize.width, drawSize.height)
+                .release()
+                .perform();
+
+        action3
+                .press(sign,drawSize.width/drawSize.width, drawSize.height-1)
+                .waitAction(111)
+                .moveTo(sign,drawSize.width-1,drawSize.height/drawSize.height)
+                .release()
+                .perform();
+
+        findByName(DocumentViewFields.docViewNavigOkButton()).click();
+
+
+        //Don't forget to remove
+        waitByName(DocumentViewFields.docViewSaveInitialsTitle());
+        findByName(DocumentViewFields.docViewSaveInitialsMessage());
+        findByName(DocumentViewFields.docViewDontSaveAction()).click();
+
+    }
+
+    @Test(priority = 4)
+    public void checkDateAnnotationFunctional(){
+
+        TouchAction action = new TouchAction(driver);
+        TouchAction action1 = new TouchAction(driver);
+        TouchAction action2 = new TouchAction(driver);
+        TouchAction action3 = new TouchAction(driver);
+        TouchAction action4 = new TouchAction(driver);
+        TouchAction action5 = new TouchAction(driver);
+
+        findByName(DocumentViewFields.docViewAddAnnotationButton()).click();
+        findByName(DocumentViewFields.docViewDateAnnotation()).click();
+        findByName(DocumentViewFields.docViewMeAsSigner()).click();
+
+        MobileElement docView = (MobileElement) findByXpath(DocumentViewFields.documentView());
+        System.out.println(docView);
+
+        MobileElement dateAnnotation = (MobileElement) findByXpath(DocumentViewFields.docAnnotationView());
+
+        Dimension size = docView.getSize();
+        System.out.println("Doc view size" + size);
+        Dimension annotationSize = dateAnnotation.getSize();
+
+        ///////
+        action4
+                .press(docView, size.width/2, size.height/2)
+                .waitAction(Duration.ofSeconds(2))
+                .release()
+                .perform();
+
+        findByName(DocumentViewFields.docActionFont()).click();
+
+/*        MobileElement fontView1 = (MobileElement) findByXpath(DocumentViewFields.fontPickerView1());
+        MobileElement fontView2 = (MobileElement) findByXpath(DocumentViewFields.fontPickerView2());
+        Dimension fontSize1 = fontView1.getSize();
+        Dimension fontSize2 = fontView2.getSize();*/
+
+        action5
+                .press(findByXpath(DocumentViewFields.fontMainPicker()), size.width/2, size.height/2)
+                .waitAction(Duration.ofSeconds(1))
+                .moveTo(findByXpath(DocumentViewFields.fontMainPicker()), size.width, size.height)
+                .release()
+                .perform();
+
+/*        findByXpath(DocumentViewFields.datePickerWheel1());
+        findByXpath(DocumentViewFields.datePickerWheel2()).sendKeys("20");*/
+
+
+        action
+                .press(docView, size.width/2, size.height/2)
+                .waitAction(11)
+                .moveTo(docView, 1, 2*annotationSize.height)
+                .release()
+                .perform();
+
+
+        action1
+                .press(docView, 1, 2*annotationSize.height)
+                .release()
+                .perform();
+
+        findByName(DocumentViewFields.datePickerSetButton()).click();
+
+        action2
+                .press(docView, 1, 2*annotationSize.height)
+                .release()
+                .perform();
+
+        findByName(DocumentViewFields.datePickerClearButton()).click();
+
+        action3
+                .press(docView, 1, 2*annotationSize.height)
+                .release()
+                .perform();
+
+        findByXpath(DocumentViewFields.datePickerWheel1()).sendKeys("December");
+        findByXpath(DocumentViewFields.datePickerWheel2()).sendKeys("25");
+        findByXpath(DocumentViewFields.datePickerWheel3()).sendKeys("2019");
+        findByName(DocumentViewFields.datePickerSetButton()).click();
+
+        ///////////
+
+
+    }
 
 
 /*    @AfterClass(timeOut = 50000)
