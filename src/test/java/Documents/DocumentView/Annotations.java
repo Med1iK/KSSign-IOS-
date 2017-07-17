@@ -4,16 +4,15 @@ package Documents.DocumentView;
 import findElementMethod.FindUI;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterClass;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import uipages.Documents.DocumentViewFields;
 import uipages.MySign.MySignatureFields;
 
+import java.awt.dnd.DragSourceDropEvent;
 import java.net.MalformedURLException;
 import java.time.Duration;
 
@@ -50,7 +49,7 @@ public class Annotations extends FindUI{
         }
     }
 
-    @Test(priority = 2)
+    @Test(enabled = false)
     public void checkFunctionalityOfSignatureAnnotation(){
 
         TouchAction action = new TouchAction(driver);
@@ -241,6 +240,10 @@ public class Annotations extends FindUI{
         findByName(DocumentViewFields.docViewDontSaveAction()).click();
 
     }
+    public static String regular = "Regular, 1 of 4";
+    public static String bold = "Bold, 2 of 4";
+    public static String italic = "Italic, 3 of 4";
+    public static String boldItalic = "Bold Italic, 4 of 4";
 
     @Test(priority = 4)
     public void checkDateAnnotationFunctional(){
@@ -251,6 +254,8 @@ public class Annotations extends FindUI{
         TouchAction action3 = new TouchAction(driver);
         TouchAction action4 = new TouchAction(driver);
         TouchAction action5 = new TouchAction(driver);
+        TouchAction action6 = new TouchAction(driver);
+        TouchAction action7 = new TouchAction(driver);
 
         findByName(DocumentViewFields.docViewAddAnnotationButton()).click();
         findByName(DocumentViewFields.docViewDateAnnotation()).click();
@@ -274,17 +279,76 @@ public class Annotations extends FindUI{
 
         findByName(DocumentViewFields.docActionFont()).click();
 
+        MobileElement setFont = (MobileElement) waitByXpath(DocumentViewFields.fontPickerView1());
+        Dimension sizeOfFontView = setFont.getSize();
+        System.out.println(sizeOfFontView);
+
+        Assert.assertEquals(setFont.getAttribute("value"), regular);
+
+       // MobileElement bolll = (MobileElement) findByXpath(DocumentViewFields.bold());
+
+        action6
+                .press(setFont, size.width/10,size.height/5)
+                .waitAction(111)
+                .moveTo(setFont, size.width/10, size.height/10)
+                .release()
+                .perform();
+        Assert.assertEquals(setFont.getAttribute("value"),bold);
+
+
+        //Italic
+        action7
+                .press(setFont, size.width/10,size.height/5)
+                .waitAction(111)
+                .moveTo(setFont, size.width/10, size.height/20)
+                .release()
+                .perform();
+        Assert.assertEquals(setFont.getAttribute("value"), italic);
+
+
+        action5
+                .press(setFont, size.width/10, size.height-70)
+                .waitAction(111)
+                .moveTo(setFont, size.width/10,size.height-30)
+                .release()
+                .perform();
+
+
+     //   System.out.println(setFont.getAttribute("value"));
+
+        Assert.assertEquals(setFont.getAttribute("value"), boldItalic);
+
+
+
+        findByXpath(DocumentViewFields.docVIEw()).click();
+
+/*
+        MobileElement wheels = (MobileElement) driver.findElements(By.className("XCUIElementTypePickerWheel"));
+
+        Point p1=wheels.getLocation();
+        Dimension d1 = wheels.getSize();
+
+//-100 scrolls up (taps the value below the currently selected value)
+        driver.tap(1, p1.getX(), p1.getY() + d1.getHeight() -100, 500);
+
+//+100 scrolls down (taps the value above the currently selected value)
+        driver.tap(1, p1.getX(), p1.getY() +100, 500);*/
+
+
+    //    findByXpath(DocumentViewFields.fontPickerView1()).sendKeys("2");
+    //    findByXpath(DocumentViewFields.fontPickerView2()).sendKeys("15");
+
 /*        MobileElement fontView1 = (MobileElement) findByXpath(DocumentViewFields.fontPickerView1());
         MobileElement fontView2 = (MobileElement) findByXpath(DocumentViewFields.fontPickerView2());
         Dimension fontSize1 = fontView1.getSize();
         Dimension fontSize2 = fontView2.getSize();*/
 
-        action5
+/*        action5
                 .press(findByXpath(DocumentViewFields.fontMainPicker()), size.width/2, size.height/2)
                 .waitAction(Duration.ofSeconds(1))
                 .moveTo(findByXpath(DocumentViewFields.fontMainPicker()), size.width, size.height)
                 .release()
-                .perform();
+                .perform();*/
 
 /*        findByXpath(DocumentViewFields.datePickerWheel1());
         findByXpath(DocumentViewFields.datePickerWheel2()).sendKeys("20");*/

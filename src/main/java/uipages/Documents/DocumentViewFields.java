@@ -108,13 +108,15 @@ public class DocumentViewFields {
     public static String datePickerWheel3(){ return "//XCUIElementTypeApplication[@name=\"KeepSolid Sign\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[3]/XCUIElementTypeOther[2]/XCUIElementTypeDatePicker/XCUIElementTypeOther/XCUIElementTypePickerWheel[3]";}
     public static String datePickerClearButton(){ return "Clear";}
     public static String datePickerSetButton(){ return "Set";}
-    public static String fontPickerView1(){ return "//XCUIElementTypeApplication[@name=\"KeepSolid Sign\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[3]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypePicker/XCUIElementTypePickerWheel[1]";}
-    public static String fontPickerView2(){ return "//XCUIElementTypeApplication[@name=\"KeepSolid Sign\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypePicker/XCUIElementTypePickerWheel[2]";}
-    public static String fontMainPicker(){ return "//XCUIElementTypeApplication[@name=\"KeepSolid Sign\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[3]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypePicker";}
+    public static String fontPickerView1(){ return "//XCUIElementTypeApplication[@name=\"KeepSolid Sign\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypePicker/XCUIElementTypePickerWheel[1]";}
+    public static String fontPickerView2(){ return "//XCUIElementTypeApplication[@name=\"KeepSolid Sign\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypePicker/XCUIElementTypePickerWheel[2]";}
+    public static String fontMainPicker(){ return "//XCUIElementTypeApplication[@name=\"KeepSolid Sign\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypePicker";}
+
+    public static String tryIT(){ return "//XCUIElementTypeApplication[@name=\"KeepSolid Sign\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[1]";}
+
+    public static String docVIEw(){ return "//XCUIElementTypeApplication[@name=\"KeepSolid Sign\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther";}
 
 
-
-
-
-
+    public static String regular(){return "//XCUIElementTypeApplication[@name=\"KeepSolid Sign\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypePicker/XCUIElementTypePickerWheel[1]/XCUIElementTypeOther[1]";}
+    public static String bold(){return "//XCUIElementTypeApplication[@name=\"KeepSolid Sign\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypePicker/XCUIElementTypePickerWheel[1]/XCUIElementTypeOther[2]";}
 }
