@@ -119,4 +119,12 @@ public class DocumentViewFields {
 
     public static String regular(){return "//XCUIElementTypeApplication[@name=\"KeepSolid Sign\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypePicker/XCUIElementTypePickerWheel[1]/XCUIElementTypeOther[1]";}
     public static String bold(){return "//XCUIElementTypeApplication[@name=\"KeepSolid Sign\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypePicker/XCUIElementTypePickerWheel[1]/XCUIElementTypeOther[2]";}
+
+    public static String checkMarkYES(){ return "Yes";}
+    public static String checkMarkNO(){ return "No";}
+    public static String checkMarkRecize(){ return "ResizeArrowsIcon";}
+
+    public static String editTextView(){ return "//XCUIElementTypeApplication[@name=\"KeepSolid Sign\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[3]/XCUIElementTypeOther/XCUIElementTypeTextView";}
+    public static String editTextTitle(){ return "Edit Text";}
+
 }

@@ -7,8 +7,7 @@ import io.appium.java_client.TouchAction;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import uipages.Documents.DocumentViewFields;
 import uipages.MySign.MySignatureFields;
 
@@ -28,6 +27,15 @@ public class Annotations extends FindUI{
     }
 
     public static final String ANSI_RED = "\u001B[31m";
+    public static String regular = "Regular, 1 of 4";
+    public static String bold = "Bold, 2 of 4";
+    public static String italic = "Italic, 3 of 4";
+    public static String boldItalic = "Bold Italic, 4 of 4";
+
+    public static String defaultFontSize = "12, 5 of 293";
+    public static String fontSize13 = "13, 6 of 293";
+    public static String fontSize14 = "14, 7 of 293";
+    public static String fontSize15 = "15, 8 of 293";
 
     @Test(priority = 1)
     public void checkAvailabilityOfTheDoc(){
@@ -49,7 +57,8 @@ public class Annotations extends FindUI{
         }
     }
 
-    @Test(enabled = false)
+    @Test(priority = 2)
+         //   (enabled = false)
     public void checkFunctionalityOfSignatureAnnotation(){
 
         TouchAction action = new TouchAction(driver);
@@ -103,12 +112,13 @@ public class Annotations extends FindUI{
 
 
         //Don't forget to remove
-        waitByName(DocumentViewFields.docViewSaveSignatureTitle());
+/*        waitByName(DocumentViewFields.docViewSaveSignatureTitle());
         findByName(DocumentViewFields.docViewSaveSignatureMessage());
-        findByName(DocumentViewFields.docViewDontSaveAction()).click();
+        findByName(DocumentViewFields.docViewDontSaveAction()).click();*/
     }
 
-    @Test(enabled = false)
+    @Test(priority = 3)
+         //   (enabled = false)
     public void checkSaveSignaturePopup(){
 
         TouchAction action = new TouchAction(driver);
@@ -149,7 +159,8 @@ public class Annotations extends FindUI{
         }
     }
 
-    @Test(enabled = false)
+    @Test(priority = 4)
+         //   (enabled = false)
     public void checkResizeOfSignatureAnnotation(){
 
         TouchAction action = new TouchAction(driver);
@@ -172,18 +183,17 @@ public class Annotations extends FindUI{
                 .moveTo(signatureResize, resizeIcon.width-200, resizeIcon.height-200)
                 .release()
                 .perform();
-
     }
 
-
-
-    @Test(enabled = false)
+    @Test(priority = 5)
+         //   (enabled = false)
     public void checkFunctionalityOFInitialsAnnotation(){
 
         TouchAction action = new TouchAction(driver);
         TouchAction action1 = new TouchAction(driver);
         TouchAction action2 = new TouchAction(driver);
         TouchAction action3 = new TouchAction(driver);
+        TouchAction action4 = new TouchAction(driver);
 
         waitByName(DocumentViewFields.docViewAddAnnotationButton()).click();
         findByName(DocumentViewFields.docViewInitialsAnnotation()).click();
@@ -233,19 +243,14 @@ public class Annotations extends FindUI{
 
         findByName(DocumentViewFields.docViewNavigOkButton()).click();
 
-
         //Don't forget to remove
         waitByName(DocumentViewFields.docViewSaveInitialsTitle());
         findByName(DocumentViewFields.docViewSaveInitialsMessage());
         findByName(DocumentViewFields.docViewDontSaveAction()).click();
-
     }
-    public static String regular = "Regular, 1 of 4";
-    public static String bold = "Bold, 2 of 4";
-    public static String italic = "Italic, 3 of 4";
-    public static String boldItalic = "Bold Italic, 4 of 4";
 
-    @Test(priority = 4)
+    @Test(priority = 6)
+         //   (enabled = false)
     public void checkDateAnnotationFunctional(){
 
         TouchAction action = new TouchAction(driver);
@@ -256,6 +261,8 @@ public class Annotations extends FindUI{
         TouchAction action5 = new TouchAction(driver);
         TouchAction action6 = new TouchAction(driver);
         TouchAction action7 = new TouchAction(driver);
+        TouchAction action8 = new TouchAction(driver);
+        TouchAction action9 = new TouchAction(driver);
 
         findByName(DocumentViewFields.docViewAddAnnotationButton()).click();
         findByName(DocumentViewFields.docViewDateAnnotation()).click();
@@ -270,8 +277,7 @@ public class Annotations extends FindUI{
         System.out.println("Doc view size" + size);
         Dimension annotationSize = dateAnnotation.getSize();
 
-        ///////
-        action4
+        action
                 .press(docView, size.width/2, size.height/2)
                 .waitAction(Duration.ofSeconds(2))
                 .release()
@@ -282,12 +288,13 @@ public class Annotations extends FindUI{
         MobileElement setFont = (MobileElement) waitByXpath(DocumentViewFields.fontPickerView1());
         Dimension sizeOfFontView = setFont.getSize();
         System.out.println(sizeOfFontView);
+        MobileElement setSize = (MobileElement) waitByXpath(DocumentViewFields.fontPickerView2());
+       // Dimension sizeOfSetSize = setSize.getSize();
 
         Assert.assertEquals(setFont.getAttribute("value"), regular);
+        Assert.assertEquals(setSize.getAttribute("value"), defaultFontSize);
 
-       // MobileElement bolll = (MobileElement) findByXpath(DocumentViewFields.bold());
-
-        action6
+        action1
                 .press(setFont, size.width/10,size.height/5)
                 .waitAction(111)
                 .moveTo(setFont, size.width/10, size.height/10)
@@ -295,88 +302,56 @@ public class Annotations extends FindUI{
                 .perform();
         Assert.assertEquals(setFont.getAttribute("value"),bold);
 
-
         //Italic
-        action7
+        action2
                 .press(setFont, size.width/10,size.height/5)
                 .waitAction(111)
-                .moveTo(setFont, size.width/10, size.height/20)
+                .moveTo(setFont, size.width/10, size.height/10)
                 .release()
                 .perform();
         Assert.assertEquals(setFont.getAttribute("value"), italic);
 
-
-        action5
-                .press(setFont, size.width/10, size.height-70)
+        //Bold Italic
+        action3
+                .press(setFont, size.width/10, size.height/5)
                 .waitAction(111)
-                .moveTo(setFont, size.width/10,size.height-30)
+                .moveTo(setFont, size.width/10,size.height/10)
                 .release()
                 .perform();
-
-
-     //   System.out.println(setFont.getAttribute("value"));
-
         Assert.assertEquals(setFont.getAttribute("value"), boldItalic);
 
-
+        action4
+                .press(setSize, size.width/10, size.height/5)
+                .waitAction(111)
+                .moveTo(setSize, size.width/10, size.height/10)
+                .release()
+                .perform();
+        Assert.assertEquals(setSize.getAttribute("value"), fontSize13);
 
         findByXpath(DocumentViewFields.docVIEw()).click();
 
-/*
-        MobileElement wheels = (MobileElement) driver.findElements(By.className("XCUIElementTypePickerWheel"));
-
-        Point p1=wheels.getLocation();
-        Dimension d1 = wheels.getSize();
-
-//-100 scrolls up (taps the value below the currently selected value)
-        driver.tap(1, p1.getX(), p1.getY() + d1.getHeight() -100, 500);
-
-//+100 scrolls down (taps the value above the currently selected value)
-        driver.tap(1, p1.getX(), p1.getY() +100, 500);*/
-
-
-    //    findByXpath(DocumentViewFields.fontPickerView1()).sendKeys("2");
-    //    findByXpath(DocumentViewFields.fontPickerView2()).sendKeys("15");
-
-/*        MobileElement fontView1 = (MobileElement) findByXpath(DocumentViewFields.fontPickerView1());
-        MobileElement fontView2 = (MobileElement) findByXpath(DocumentViewFields.fontPickerView2());
-        Dimension fontSize1 = fontView1.getSize();
-        Dimension fontSize2 = fontView2.getSize();*/
-
-/*        action5
-                .press(findByXpath(DocumentViewFields.fontMainPicker()), size.width/2, size.height/2)
-                .waitAction(Duration.ofSeconds(1))
-                .moveTo(findByXpath(DocumentViewFields.fontMainPicker()), size.width, size.height)
-                .release()
-                .perform();*/
-
-/*        findByXpath(DocumentViewFields.datePickerWheel1());
-        findByXpath(DocumentViewFields.datePickerWheel2()).sendKeys("20");*/
-
-
-        action
+        action5
                 .press(docView, size.width/2, size.height/2)
                 .waitAction(11)
                 .moveTo(docView, 1, 2*annotationSize.height)
                 .release()
                 .perform();
 
-
-        action1
+        action6
                 .press(docView, 1, 2*annotationSize.height)
                 .release()
                 .perform();
 
         findByName(DocumentViewFields.datePickerSetButton()).click();
 
-        action2
+        action7
                 .press(docView, 1, 2*annotationSize.height)
                 .release()
                 .perform();
 
         findByName(DocumentViewFields.datePickerClearButton()).click();
 
-        action3
+        action8
                 .press(docView, 1, 2*annotationSize.height)
                 .release()
                 .perform();
@@ -385,14 +360,209 @@ public class Annotations extends FindUI{
         findByXpath(DocumentViewFields.datePickerWheel2()).sendKeys("25");
         findByXpath(DocumentViewFields.datePickerWheel3()).sendKeys("2019");
         findByName(DocumentViewFields.datePickerSetButton()).click();
-
-        ///////////
-
-
     }
 
 
-/*    @AfterClass(timeOut = 50000)
+    @Test(priority = 7)
+          //(enabled = false)
+    public void checkFunctionalOfCheckMarkAnnotation(){
+
+        TouchAction action = new TouchAction(driver);
+        TouchAction action1 = new TouchAction(driver);
+        TouchAction action2 = new TouchAction(driver);
+        TouchAction action3 = new TouchAction(driver);
+        TouchAction action4 = new TouchAction(driver);
+
+        findByName(DocumentViewFields.docViewAddAnnotationButton()).click();
+        findByName(DocumentViewFields.docViewCheckmarkAnnotatin()).click();
+        findByName(DocumentViewFields.docViewMeAsSigner()).click();
+
+        MobileElement docView = (MobileElement) findByXpath(DocumentViewFields.documentView());
+        System.out.println(docView);
+
+        MobileElement checkMarkAnnotation = (MobileElement) findByXpath(DocumentViewFields.docAnnotationView());
+
+        Dimension size = docView.getSize();
+        System.out.println("Doc view size" + size);
+        Dimension annotationSize = checkMarkAnnotation.getSize();
+        System.out.println(annotationSize);
+
+        action
+                .press(docView, size.width/2, size.height/2)
+                .release()
+                .perform();
+        findByName(DocumentViewFields.checkMarkNO()).click();
+
+        action1
+                .press(docView, size.width/2, size.height/2)
+                .release()
+                .perform();
+        findByName(DocumentViewFields.checkMarkYES()).click();
+
+
+
+/*        MobileElement checkMarkResize = (MobileElement) findByName(DocumentViewFields.checkMarkRecize());
+        Dimension resizeIcon = checkMarkResize.getSize();
+        System.out.println("Resize icon" + resizeIcon);
+
+        action2
+                .press(checkMarkResize)
+                .waitAction(111)
+                .moveTo(checkMarkResize, resizeIcon.width+200, resizeIcon.height+200)
+                .release()
+                .perform();
+
+        action3
+                .press(checkMarkResize)
+                .waitAction(111)
+                .moveTo(checkMarkResize, resizeIcon.width-200, resizeIcon.height-200)
+                .release()
+                .perform();*/
+
+        action2
+                .press(docView, size.width/2, size.height/2)
+                .waitAction(111)
+                .moveTo(docView, 5, size.height/2)
+                .release()
+                .perform();
+
+        MobileElement docView1 = (MobileElement) findByXpath(DocumentViewFields.documentView());
+
+        try {
+            action3
+                    .tap(docView1, 1, size.height/2)
+                    .release()
+                    .perform();
+            findByName(DocumentViewFields.checkMarkYES()).click();
+        }catch (NoSuchElementException f){
+
+            System.out.println(ANSI_RED+"CheckMark annotation doesn't move");
+            action4
+                    .press(docView,1,size.height/2)
+                    .waitAction(Duration.ofSeconds(2))
+                    .release()
+                    .perform();
+            findByName(DocumentViewFields.docActionRemove()).click();
+        }
+
+    }
+
+    public String textValue = "Hello World!";
+
+    @Test(priority = 8)
+    public void checkFuntionalityOfTextAnnotation(){
+
+        TouchAction action = new TouchAction(driver);
+        TouchAction action1 = new TouchAction(driver);
+        TouchAction action2 = new TouchAction(driver);
+        TouchAction action3 = new TouchAction(driver);
+        TouchAction action4 = new TouchAction(driver);
+        TouchAction action5 = new TouchAction(driver);
+        TouchAction action6 = new TouchAction(driver);
+        TouchAction action7 = new TouchAction(driver);
+        TouchAction action8 = new TouchAction(driver);
+
+        waitByName(DocumentViewFields.docViewAddAnnotationButton()).click();
+        findByName(DocumentViewFields.docViewTextAnnotation()).click();
+        findByName(DocumentViewFields.docViewMeAsSigner()).click();
+
+        MobileElement docView = (MobileElement) findByXpath(DocumentViewFields.documentView());
+        System.out.println(docView);
+
+        MobileElement textAnnotation = (MobileElement) findByXpath(DocumentViewFields.docAnnotationView());
+
+        Dimension size = docView.getSize();
+        System.out.println("Doc view size" + size);
+        Dimension annotationSize = textAnnotation.getSize();
+        System.out.println(annotationSize);
+
+        action
+                .press(docView, size.width/2, size.height/2)
+                .waitAction(Duration.ofSeconds(2))
+                .release()
+                .perform();
+
+        findByName(DocumentViewFields.docActionFont()).click();
+
+        MobileElement setFont = (MobileElement) waitByXpath(DocumentViewFields.fontPickerView1());
+        Dimension sizeOfFontView = setFont.getSize();
+        System.out.println(sizeOfFontView);
+        MobileElement setSize = (MobileElement) waitByXpath(DocumentViewFields.fontPickerView2());
+        // Dimension sizeOfSetSize = setSize.getSize();
+
+        Assert.assertEquals(setFont.getAttribute("value"), regular);
+        Assert.assertEquals(setSize.getAttribute("value"), defaultFontSize);
+
+        action1
+                .press(setFont, size.width/10,size.height/5)
+                .waitAction(111)
+                .moveTo(setFont, size.width/10, size.height/10)
+                .release()
+                .perform();
+        Assert.assertEquals(setFont.getAttribute("value"),bold);
+
+        //Italic
+        action2
+                .press(setFont, size.width/10,size.height/5)
+                .waitAction(111)
+                .moveTo(setFont, size.width/10, size.height/10)
+                .release()
+                .perform();
+        Assert.assertEquals(setFont.getAttribute("value"), italic);
+
+        //Bold Italic
+        action3
+                .press(setFont, size.width/10, size.height/5)
+                .waitAction(111)
+                .moveTo(setFont, size.width/10,size.height/10)
+                .release()
+                .perform();
+        Assert.assertEquals(setFont.getAttribute("value"), boldItalic);
+
+        action4
+                .press(setSize, size.width/10, size.height/5)
+                .waitAction(111)
+                .moveTo(setSize, size.width/10, size.height/10)
+                .release()
+                .perform();
+        Assert.assertEquals(setSize.getAttribute("value"), fontSize13);
+
+        findByXpath(DocumentViewFields.docVIEw()).click();
+
+        action5
+                .tap(docView, size.width/2,size.height/2)
+                .release()
+                .perform();
+
+        waitByName(DocumentViewFields.editTextTitle());
+        findByXpath(DocumentViewFields.editTextView()).sendKeys("Hello World");
+        findByName(DocumentViewFields.docViewNavigOkButton()).click();
+
+        action6
+                .longPress(docView,size.width/2,size.height/2)
+                .release()
+                .perform();
+
+        findByName(DocumentViewFields.docActionEdit()).click();
+        waitByName(DocumentViewFields.editTextTitle());
+        findByXpath(DocumentViewFields.editTextView()).sendKeys("!");
+
+        MobileElement editViewCheck = (MobileElement) findByXpath(DocumentViewFields.editTextView());
+
+        Assert.assertEquals(editViewCheck.getAttribute("value"), textValue);
+
+        findByName(DocumentViewFields.docViewNavigOkButton()).click();
+
+        action7
+                .press(docView,size.width/2,size.height/2)
+                .waitAction(111)
+                .moveTo(docView,3,annotationSize.height*3)
+                .release()
+                .perform();
+
+    }
+
+    @AfterClass(timeOut = 50000)
     public void removeSignature(){
 
         waitByName(DocumentViewFields.docViewNavigationBackButton()).click();
@@ -407,6 +577,6 @@ public class Annotations extends FindUI{
         waitByName(DocumentViewFields.docViewSynced());
         findByName(DocumentViewFields.documentsMenuButton()).click();
         driver.quit();
-    }*/
+    }
 
 }
