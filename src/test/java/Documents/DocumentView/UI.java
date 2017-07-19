@@ -30,7 +30,8 @@ public class UI extends FindUI {
         wait = new WebDriverWait(driver, 1500);
     }
 
-    @Test(priority = 1)
+    @Test//(priority = 1)
+            (enabled = false)
     public void authLock(){
 
         try {

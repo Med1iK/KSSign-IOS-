@@ -126,5 +126,7 @@ public class DocumentViewFields {
 
     public static String editTextView(){ return "//XCUIElementTypeApplication[@name=\"KeepSolid Sign\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[3]/XCUIElementTypeOther/XCUIElementTypeTextView";}
     public static String editTextTitle(){ return "Edit Text";}
+    public static String selectSignerWindow(){return "//XCUIElementTypeApplication[@name=\"KeepSolid Sign\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther[1]";}
+
 
 }

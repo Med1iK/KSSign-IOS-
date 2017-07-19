@@ -38,6 +38,7 @@ public class Annotations extends FindUI{
     public static String fontSize15 = "15, 8 of 293";
 
     @Test(priority = 1)
+         //   (enabled = false)
     public void checkAvailabilityOfTheDoc(){
 
         try{

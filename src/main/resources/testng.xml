@@ -7,6 +7,8 @@
             </class>
             <class name="Documents.DocumentView.AddAnnotations">
             </class>
+            <class name="Documents.DocumentView.Annotations">
+            </class>
         </classes>
     </test>
 </suite>

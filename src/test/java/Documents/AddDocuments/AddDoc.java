@@ -1,16 +1,18 @@
-package Documents;
+package Documents.AddDocuments;
 
 
 import findElementMethod.FindUI;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.interactions.*;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import uipages.Documents.DocumentListFields;
+import uipages.MySign.MySignatureFields;
 
 import java.net.MalformedURLException;
 import java.time.Duration;
@@ -19,9 +21,7 @@ import static org.testng.AssertJUnit.assertEquals;
 
 public class AddDoc extends FindUI {
 
-
-    public AddDoc() throws MalformedURLException {
-    }
+    public AddDoc() throws MalformedURLException {}
 
     @BeforeClass
     public void start() {
@@ -35,27 +35,33 @@ public class AddDoc extends FindUI {
     public static String lastName = "Best";
     public static String company = "KS";
 
+    int t = 20;
+    int t1 = 20;
+    int t2 = 30;
+    int t3 = 40;
 
 
-/*    @Test(priority = 1)
-    public void lockScreen(){
+    @Test//(priority = 1)
+            (enabled = false)
+    public void authLock(){
 
-        waitByName(AuthorisationFields.authPass()).click();
-        findByName(AuthorisationFields.authPass()).sendKeys("qwerty");
-        findByName(AuthorisationFields.authLogo()).click();
-        //findByName(AuthorisationFields.authRememberPass()).click();
-        findByName(AuthorisationFields.authSignInButton()).click();
-    }*/
- /*   @Test(priority = 1)
-    public void authorisation() {
+        try {
+            findByName(MySignatureFields.mySignTermsConditions());
 
-        waitByName(DocumentListFields.documentAuthEmail());
-        findByName(DocumentListFields.documentAuthEmail()).click();
-        findByName(DocumentListFields.documentAuthEmail()).sendKeys(userEmail);
-        findByName(DocumentListFields.documentAuthPass()).sendKeys(userPass);
-        findByName(DocumentListFields.documentAuthKSIDLogo()).click();
-        findByName(DocumentListFields.documentAuthSignInButton()).click();
-    }*/
+            waitByName(MySignatureFields.mySignAuthEmail()).click();
+            findByName(MySignatureFields.mySignAuthEmail()).sendKeys(userEmail);
+            findByName(MySignatureFields.mySignAuthPass()).sendKeys(userPass);
+            findByName(MySignatureFields.mySignAuthLogo()).click();
+            findByName(MySignatureFields.mySignAuthSignInButton()).click();
+
+        }catch (NoSuchElementException e){
+
+            waitByName(MySignatureFields.mySignAuthPass()).click();
+            waitByName(MySignatureFields.mySignAuthPass()).sendKeys(userPass);
+            waitByName(MySignatureFields.mySignAuthLogo()).click();
+            waitByName(MySignatureFields.mySignAuthSignInButton()).click();
+        }
+    }
 
 /*    @Test(priority = 2)
     public void checKUIOfDocumentListMenu(){
@@ -89,12 +95,11 @@ public class AddDoc extends FindUI {
     }*/
 
 
-    int t = 20;
-    int t1 = 20;
-    int t2 = 30;
-    int t3 = 40;
 
-    @Test(priority = 2)
+
+
+    @Test//(priority = 2)
+            (enabled = false)
     public void addDocFromScan() {
 
         TouchAction action = new TouchAction(driver);
@@ -134,50 +139,5 @@ public class AddDoc extends FindUI {
     }
 
 
-    @Test(priority = 1)
-    public void movingAnnotation(){
-
-            TouchAction action = new TouchAction(driver);
-            Actions builder = new Actions(driver);
-
-            waitByName(DocumentListFields.documentPreview()).click();
-            waitByName(DocumentListFields.documentNavigationNextButton()).click();
-            waitByXpath(DocumentListFields.annotation());
-
-        MobileElement slider = (MobileElement) findByXpath(DocumentListFields.documentView());
-    //    MobileElement slider1 = (MobileElement) findByXpath(DocumentListFields.documentView());
-    //    MobileElement slider2 = (MobileElement) findByXpath(DocumentListFields.annotation2());
-        Dimension size = slider.getSize();
-        Point sizeL = slider.getLocation();
-
-/*        TouchAction swipe = new TouchAction(driver).press(slider, size.width / 8, size.height /118 )
-                .waitAction(Duration.ofSeconds(2)).moveTo(slider, 390, size.height / 627).release();
-        swipe.perform(); */
-
-/*        TouchAction swipe = new TouchAction(driver).press(slider1, sizeL.x=141, sizeL.y=386 )
-                .waitAction(Duration.ofSeconds(2)).moveTo(slider2, sizeL.x=270, sizeL.y=472).release();
-        swipe.perform();*/
-
-        TouchAction actvion = action.press(slider,350,390).waitAction(11).moveTo(slider,2,64).release();
-        actvion.perform();
-
-
-
-/*            Action dragAndDrop = builder.clickAndHold(findByXpath(DocumentListFields.annotation()))
-                    .moveToElement(findByXpath(DocumentListFields.annotation2()))
-                    .release(findByXpath(DocumentListFields.annotation2()))
-                    .build();
-            dragAndDrop.perform();
-    waitByXpath(DocumentListFields.annotation());
-            action.press(findByXpath(DocumentListFields.annotation()));
-
-            action.longPress(findByXpath(DocumentListFields
-                    .annotation()))
-                    .moveTo(11, 11)
-                    .perform()
-                    .release();*/
-
-      //  waitByName(DocumentListFields.documentPreview());
-    }
 
 }
