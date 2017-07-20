@@ -16,9 +16,9 @@ import uipages.MySign.MySignatureFields;
 import javax.print.Doc;
 import java.net.MalformedURLException;
 
-public class AddAnnotations extends FindUI{
+public class AddSigners extends FindUI{
 
-    public AddAnnotations() throws MalformedURLException {
+    public AddSigners() throws MalformedURLException {
     }
 
     @BeforeClass

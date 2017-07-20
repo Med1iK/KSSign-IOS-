@@ -5,7 +5,7 @@
         <classes>
             <class name="Documents.DocumentView.UI">
             </class>
-            <class name="Documents.DocumentView.AddAnnotations">
+            <class name="Documents.DocumentView.AddSigners">
             </class>
             <class name="Documents.DocumentView.Annotations">
             </class>
