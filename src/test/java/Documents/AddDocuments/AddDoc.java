@@ -11,6 +11,7 @@ import org.openqa.selenium.interactions.*;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import uipages.Documents.AddDocumentFields;
 import uipages.Documents.DocumentListFields;
 import uipages.MySign.MySignatureFields;
 
@@ -34,6 +35,9 @@ public class AddDoc extends FindUI {
     public static String firstName = "Johny";
     public static String lastName = "Best";
     public static String company = "KS";
+    public static String dropBoxEmail = "";
+    public static String dropBoxPass = "";
+
 
     int t = 20;
     int t1 = 20;
@@ -41,8 +45,8 @@ public class AddDoc extends FindUI {
     int t3 = 40;
 
 
-    @Test//(priority = 1)
-            (enabled = false)
+    @Test(priority = 1)
+           // (enabled = false)
     public void authLock(){
 
         try {
@@ -63,40 +67,131 @@ public class AddDoc extends FindUI {
         }
     }
 
-/*    @Test(priority = 2)
-    public void checKUIOfDocumentListMenu(){
+    @Test(priority = 2)
+         //   (enabled = false)
+    public void checkSyncStatus(){
 
-        waitByName(DocumentListFields.documentMenuIcon());
-        findByName(DocumentListFields.documentMenuIcon()).click();
-        waitByName(DocumentListFields.documentSynced());
-        findByName(DocumentListFields.documentMenuIcon()).click();
-        System.out.println("Menu Icon has been checked");
-        findByName(DocumentListFields.documentMenuTitle());
+        waitByName(AddDocumentFields.menuIcon()).click();
+        waitByName(AddDocumentFields.syncedStatus());
+        findByName(AddDocumentFields.menuIcon()).click();
+    }
+
+    @Test//(priority = 3)
+            (enabled = false)
+    public void checkUIOfAddDocumentMenu(){
+
+        findByName(AddDocumentFields.addDocButton()).click();
+
+        waitByName(AddDocumentFields.addNewDocTitile());
         System.out.println("Title has been checked");
-        findByName(DocumentListFields.documentMenuNotificationIcon());
-        System.out.println("Notification icon has been checked");
-        findByName(DocumentListFields.documentMenuFilterAll());
-        System.out.println("All documents filter has been checked");
-        findByName(DocumentListFields.documentMenuFilterWaitingForMe());
-        System.out.println("Waiting for me filter has been checked");
-        findByName(DocumentListFields.documentMenuFilterWaitingForOthers());
-        System.out.println("Waiting for other filter has been checked");
-        findByName(DocumentListFields.documentMenuNoDocumenttsPlaceholderIcon());
-        System.out.println("No document icon has been checked");
-        findByName(DocumentListFields.documentMenuNoDocumentsPlaceholderIconText());
-        System.out.println("No document text has been checked");
-        findByName(DocumentListFields.documentMenuAddDocumentButton());
-        System.out.println("Add document button has been checked");
-        findByName(DocumentListFields.documentMenuEditButton());
-        System.out.println("Edit button has been checked");
-        findByName(DocumentListFields.documentMenuSearchButton());
-        System.out.println("Search button has been checked");
 
-    }*/
+        findByName(AddDocumentFields.cancelButton());
+        System.out.println("Cancel button has been checked");
 
+        //Template
+        findByName(AddDocumentFields.templateIcon());
+        findByName(AddDocumentFields.templateTitle());
+        findByName(AddDocumentFields.templateText());
+        System.out.println("UI of Template has been checked");
 
+        //DropBox
+        findByName(AddDocumentFields.dropboxIcon());
+        findByName(AddDocumentFields.dropboxTitle());
+        System.out.println("DropBox UI has been checked");
 
+        //GoogleDrive
+        findByName(AddDocumentFields.googleDriveIcon());
+        findByName(AddDocumentFields.googleDriveTitle());
+        System.out.println("Google Drive UI has been checked");
 
+        //iCloudDriver
+        findByName(AddDocumentFields.icloudIcon());
+        findByName(AddDocumentFields.icloudTitle());
+        System.out.println("iCloud Driver UI has been checked");
+
+        //Evernote
+        findByName(AddDocumentFields.evernoteIcon());
+        findByName(AddDocumentFields.evernoteTitle());
+        System.out.println("Evernote UI has been checked");
+
+        //Camera
+        findByName(AddDocumentFields.cameraIcon());
+        findByName(AddDocumentFields.cameraTitle());
+        System.out.println("Camera UI has been checked");
+
+        //Gallery?
+
+        findByName(AddDocumentFields.cancelButton()).click();
+    }
+
+    @Test//(priority = 4)
+            (enabled = false)
+    public void addDocFromDropBox(){
+
+        waitByName(AddDocumentFields.addDocButton()).click();
+        waitByName(AddDocumentFields.dropboxTitle());
+        findByName(AddDocumentFields.dropBoxButton()).click();
+
+        //In the future need improved
+        waitByName(AddDocumentFields.keepSolidSign());
+        findByName(AddDocumentFields.wouldYouLikeToAcess());
+        findByName(AddDocumentFields.allowButton()).click();
+
+        waitByName(AddDocumentFields.passwordField()).click();
+        waitByName(AddDocumentFields.passwordField()).sendKeys(userPass);
+        findByName(AddDocumentFields.doneButton()).click();
+
+        waitByName(AddDocumentFields.dropboxTitle());
+        waitByName(AddDocumentFields.objectiveCPdf()).click();
+        findByName(AddDocumentFields.navigationCloseButton()).click();
+
+        waitByName(AddDocumentFields.menuIcon());
+        findByName(AddDocumentFields.objectiveCC());
+    }
+
+    @Test(priority = 5)
+    public void addDocFromGoogleDrive(){
+
+        TouchAction action = new TouchAction(driver);
+
+        findByName(AddDocumentFields.addDocButton()).click();
+        waitByName(AddDocumentFields.googleDriveTitle());
+        waitByName(AddDocumentFields.googleDriveButton()).click();
+
+        waitByName(AddDocumentFields.googleAkksView());
+        MobileElement swipe = (MobileElement) findByName(AddDocumentFields.googleAkksView());
+        Dimension size = swipe.getSize();
+        System.out.println(size);
+
+        action
+                .press(swipe)
+                .waitAction(111)
+                .moveTo(swipe, 1,1)
+                .release()
+                .perform();
+
+        findByName(AddDocumentFields.johnyJohnsAkk()).click();
+        waitByName(AddDocumentFields.ksSignExportedPdf()).click();
+        waitByName(AddDocumentFields.navigationCloseButton()).click();
+
+        waitByName(AddDocumentFields.menuIcon());
+        findByName(AddDocumentFields.ksSignExported());
+    }
+
+    @Test(priority = 6)
+    public void addDocFromIcloud(){
+
+        findByName(AddDocumentFields.addDocButton()).click();
+        waitByName(AddDocumentFields.icloudTitle());
+        findByName(AddDocumentFields.icloudButton()).click();
+
+        waitByName(AddDocumentFields.locations());
+        findByName(AddDocumentFields.doc398()).click();
+
+        waitByName(AddDocumentFields.menuIcon());
+        findByName(AddDocumentFields.doc398InDocList());
+    }
+    
 
     @Test//(priority = 2)
             (enabled = false)

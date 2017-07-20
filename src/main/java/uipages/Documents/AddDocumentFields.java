@@ -9,6 +9,10 @@ public class AddDocumentFields {
     public static String authRequired(){return "Authorization is required";}
     public static String returnButton(){return "Return to KeepSolid Sign";}
     public static String navigationCloseButton(){return "NavigationCloseButton";}
+    public static String menuIcon(){ return "MenuIcon";}
+    public static String syncedStatus(){return "Synced";}
+    public static String passwordField(){return "AuthKSPass";}
+    public static String doneButton(){return "Done";}
 
     //Template
     public static String templateIcon(){return "AddDocumentFromTemplate";}
@@ -25,6 +29,7 @@ public class AddDocumentFields {
     public static String allowButton(){return "Allow";}
     public static String useADifferentAkk(){return "Use a different account";}
     public static String objectiveCPdf(){return "2. Objective-Ccc.pdf";}
+    public static String objectiveCC(){return "2. Objective-Ccc";}
     public static String viewListIcon(){return "ViewInListViewIcon";}
 
 
@@ -32,11 +37,18 @@ public class AddDocumentFields {
     public static String googleDriveIcon(){return "AddDocumentFromGD";}
     public static String googleDriveTitle(){return "Google Drive";}
     public static String googleDriveButton(){return "GoogleDriveButton";}
+    public static String googleAkksView(){return "Sign in - Google Accounts";}
+    public static String johnyJohnsAkk(){return "Johny Johns johnyjohnsqa@gmail.com";}
+    public static String ksSignExportedPdf(){return "KS Sign Exported.pdf";}
+    public static String ksSignExported(){return "KS Sign Exported";}
 
     //ICloud
     public static String icloudButton(){return "ICloudButton";}
     public static String icloudIcon(){return "AddDocumentFromIcloud";}
     public static String icloudTitle(){return "iCloud Drive";}
+    public static String locations(){return "Locations";}
+    public static String doc398(){return "!398_forms1.pdf, PDF document, 1.0 MB";}
+    public static String doc398InDocList(){return "!398_forms1";}
 
     //Evernote
     public static String evernoteButton(){return "EvernoteButton";}
