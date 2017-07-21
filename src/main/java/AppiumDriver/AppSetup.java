@@ -40,7 +40,6 @@ public class AppSetup {
 
         if (driver != null) {
             System.out.println("driver is not null");
-
         }
     }
 

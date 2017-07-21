@@ -1,0 +1,32 @@
+package uipages.MainButtons;
+
+
+public class AppMainButtons {
+
+
+    public static String cancelButton(){ return "Cancel";}
+    public static String addButton(){return "Add";}
+    public static String dontAllowButton(){return "Don’t Allow";}
+    public static String okButton(){return "OK";}
+
+    public static String returnButton(){return "Return to KeepSolid Sign";}
+    public static String navigationCloseButton(){return "NavigationCloseButton";}
+    public static String menuIcon(){ return "MenuIcon";}
+    public static String syncedStatus(){return "Synced";}
+    public static String doneButton(){return "Done";}
+    public static String navigBackButton(){return "NavigationBackButton";}
+    public static String progressWheel(){return "In progress";}
+
+    public static String docMenuButton(){return "Documents";}
+    public static String templateMenuButton(){return "Templates";}
+    public static String archiveMenuButton(){return "Archive";}
+    public static String contactsMenuButton(){return "Contacts";}
+    public static String mySignMenuButton(){return "My Signature";}
+    public static String notificationsMenuButton(){return "Notifications";}
+    public static String SettingsMenuButton(){return "Settings";}
+    public static String searchField(){return "Search";}
+
+
+
+
+}

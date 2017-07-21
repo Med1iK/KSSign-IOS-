@@ -4,15 +4,9 @@ package uipages.Documents;
 public class AddDocumentFields {
 
     public static String addDocButton(){return "ContactInviteButton";}
-    public static String cancelButton(){ return "Cancel";}
     public static String addNewDocTitile(){return "Add new document";}
     public static String authRequired(){return "Authorization is required";}
-    public static String returnButton(){return "Return to KeepSolid Sign";}
-    public static String navigationCloseButton(){return "NavigationCloseButton";}
-    public static String menuIcon(){ return "MenuIcon";}
-    public static String syncedStatus(){return "Synced";}
     public static String passwordField(){return "AuthKSPass";}
-    public static String doneButton(){return "Done";}
 
     //Template
     public static String templateIcon(){return "AddDocumentFromTemplate";}
@@ -54,6 +48,15 @@ public class AddDocumentFields {
     public static String evernoteButton(){return "EvernoteButton";}
     public static String evernoteIcon(){return "AddDocumentFromEvernote";}
     public static String evernoteTitle(){return "Evernote";}
+    public static String evernoteSignInTitle(){return "Sign in to authorize KeepSolid Sign";}
+    public static String evernoteSignInEmailField(){return "//XCUIElementTypeOther[@name=\"Allow Account Access\"]/XCUIElementTypeOther[3]/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeTextField";}
+    public static String evernoteSignInPassword(){return "//XCUIElementTypeOther[@name=\"Allow Account Access\"]/XCUIElementTypeOther[3]/XCUIElementTypeOther[2]/XCUIElementTypeSecureTextField";}
+    public static String evernoteSignInButton(){return "Sign in";}
+    public static String evernoteAuthoriseKSSignTitle(){return "Authorize KeepSolid Sign to access your account";}
+    public static String evernoteAuthoriseButton(){return "Authorize";}
+    public static String evernoteFirstNotebook(){return "First Notebook";}
+    public static String evernoteExptTest2(){return "EXPT TEST_2.pdf";}
+    public static String evernoteDocListExptTest2(){return "EXPT TEST_2";}
 
     //Camera
     public static String cameraButton(){return "CameraButton";}
@@ -68,7 +71,9 @@ public class AddDocumentFields {
     public static String galleryText(){return "Choose photos from your gallery";}
 
 
-
+    //Settings
+    public static String settingsMenuButton(){return "Settings";}
+    public static String settingsCloudStorage(){return "Cloud storages";}
 
 
 

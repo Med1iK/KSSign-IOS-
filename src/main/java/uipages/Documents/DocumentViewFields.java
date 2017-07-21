@@ -5,8 +5,8 @@ package uipages.Documents;
 
 public class DocumentViewFields {
 
-    public static String docViewMenuIcon(){ return "MenuIcon";}
-    public static String docViewSynced(){return "Synced";}
+  //  public static String docViewMenuIcon(){ return "MenuIcon";}
+  //  public static String docViewSynced(){return "Synced";}
     public static String docViewNoDocumenttsPlaceholderIcon(){ return "NoDocumenttsPlaceholderIcon";}
     public static String docAddDocPlusButton(){ return "ContactInviteButton";}
     public static String docAddDocCameraButton(){ return "Camera";}

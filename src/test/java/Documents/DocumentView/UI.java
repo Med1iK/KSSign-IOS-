@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import uipages.Documents.DocumentViewFields;
+import uipages.MainButtons.AppMainButtons;
 import uipages.MySign.MySignatureFields;
 
 import java.net.MalformedURLException;
@@ -55,9 +56,9 @@ public class UI extends FindUI {
     @Test(priority = 2)
     public void checkAvailabilityOfTheDoc(){
 
-        waitByName(DocumentViewFields.docViewMenuIcon()).click();
-        waitByName(DocumentViewFields.docViewSynced());
-        findByName(DocumentViewFields.docViewMenuIcon()).click();
+        waitByName(AppMainButtons.menuIcon()).click();
+        waitByName(AppMainButtons.syncedStatus());
+        findByName(AppMainButtons.menuIcon()).click();
 
         try{
             findByName(DocumentViewFields.docViewNoDocumenttsPlaceholderIcon()).isDisplayed();

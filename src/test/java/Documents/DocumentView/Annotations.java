@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import uipages.Documents.DocumentViewFields;
+import uipages.MainButtons.AppMainButtons;
 import uipages.MySign.MySignatureFields;
 
 import java.awt.dnd.DragSourceDropEvent;
@@ -568,14 +569,14 @@ public class Annotations extends FindUI{
 
         waitByName(DocumentViewFields.docViewNavigationBackButton()).click();
         waitByName(DocumentViewFields.docViewNavigCloseButton()).click();
-        waitByName(DocumentViewFields.docViewMenuIcon()).click();
+        waitByName(AppMainButtons.menuIcon()).click();
         findByName(DocumentViewFields.docMySignMenuButton()).click();
         waitByName(DocumentViewFields.docMySignView()).click();
         waitByName(DocumentViewFields.docSignPencilTool()).click();
         findByName(DocumentViewFields.docSignEaserAll()).click();
         findByName(DocumentViewFields.docViewNavigOkButton()).click();
-        waitByName(DocumentViewFields.docViewMenuIcon()).click();
-        waitByName(DocumentViewFields.docViewSynced());
+        waitByName(AppMainButtons.menuIcon()).click();
+        waitByName(AppMainButtons.syncedStatus());
         findByName(DocumentViewFields.documentsMenuButton()).click();
         driver.quit();
     }

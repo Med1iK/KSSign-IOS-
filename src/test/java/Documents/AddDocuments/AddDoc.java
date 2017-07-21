@@ -9,10 +9,12 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.interactions.*;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import uipages.Documents.AddDocumentFields;
 import uipages.Documents.DocumentListFields;
+import uipages.MainButtons.AppMainButtons;
 import uipages.MySign.MySignatureFields;
 
 import java.net.MalformedURLException;
@@ -71,9 +73,9 @@ public class AddDoc extends FindUI {
          //   (enabled = false)
     public void checkSyncStatus(){
 
-        waitByName(AddDocumentFields.menuIcon()).click();
-        waitByName(AddDocumentFields.syncedStatus());
-        findByName(AddDocumentFields.menuIcon()).click();
+        waitByName(AppMainButtons.menuIcon()).click();
+        waitByName(AppMainButtons.syncedStatus());
+        findByName(AppMainButtons.menuIcon()).click();
     }
 
     @Test//(priority = 3)
@@ -85,7 +87,7 @@ public class AddDoc extends FindUI {
         waitByName(AddDocumentFields.addNewDocTitile());
         System.out.println("Title has been checked");
 
-        findByName(AddDocumentFields.cancelButton());
+        findByName(AppMainButtons.cancelButton());
         System.out.println("Cancel button has been checked");
 
         //Template
@@ -121,7 +123,7 @@ public class AddDoc extends FindUI {
 
         //Gallery?
 
-        findByName(AddDocumentFields.cancelButton()).click();
+        findByName(AppMainButtons.cancelButton()).click();
     }
 
     @Test//(priority = 4)
@@ -139,13 +141,14 @@ public class AddDoc extends FindUI {
 
         waitByName(AddDocumentFields.passwordField()).click();
         waitByName(AddDocumentFields.passwordField()).sendKeys(userPass);
-        findByName(AddDocumentFields.doneButton()).click();
+        findByName(AppMainButtons.doneButton()).click();
 
         waitByName(AddDocumentFields.dropboxTitle());
         waitByName(AddDocumentFields.objectiveCPdf()).click();
-        findByName(AddDocumentFields.navigationCloseButton()).click();
+        waitByName(AppMainButtons.progressWheel()).isDisplayed();
+        findByName(AppMainButtons.navigationCloseButton()).click();
 
-        waitByName(AddDocumentFields.menuIcon());
+        waitByName(AppMainButtons.menuIcon());
         findByName(AddDocumentFields.objectiveCC());
     }
 
@@ -172,9 +175,10 @@ public class AddDoc extends FindUI {
 
         findByName(AddDocumentFields.johnyJohnsAkk()).click();
         waitByName(AddDocumentFields.ksSignExportedPdf()).click();
-        waitByName(AddDocumentFields.navigationCloseButton()).click();
+        waitByName(AppMainButtons.progressWheel()).isDisplayed();
+        waitByName(AppMainButtons.navigationCloseButton()).click();
 
-        waitByName(AddDocumentFields.menuIcon());
+        waitByName(AppMainButtons.menuIcon());
         findByName(AddDocumentFields.ksSignExported());
     }
 
@@ -188,10 +192,36 @@ public class AddDoc extends FindUI {
         waitByName(AddDocumentFields.locations());
         findByName(AddDocumentFields.doc398()).click();
 
-        waitByName(AddDocumentFields.menuIcon());
+        waitByName(AppMainButtons.menuIcon());
         findByName(AddDocumentFields.doc398InDocList());
     }
-    
+
+
+    @Test(priority = 7)
+    public void addDocFromEvernote(){
+
+        findByName(AddDocumentFields.addDocButton()).click();
+        waitByName(AddDocumentFields.evernoteTitle());
+        findByName(AddDocumentFields.evernoteButton()).click();
+
+        waitByName(AddDocumentFields.evernoteSignInTitle());
+        findByXpath(AddDocumentFields.evernoteSignInEmailField()).click();
+        findByXpath(AddDocumentFields.evernoteSignInEmailField()).sendKeys(userEmail);
+        findByXpath(AddDocumentFields.evernoteSignInPassword()).click();
+        findByXpath(AddDocumentFields.evernoteSignInPassword()).sendKeys(userPass);
+        findByName(AddDocumentFields.evernoteSignInButton()).click();
+
+        waitByName(AddDocumentFields.evernoteAuthoriseKSSignTitle());
+        findByName(AddDocumentFields.evernoteAuthoriseButton()).click();
+
+        waitByName(AddDocumentFields.evernoteFirstNotebook()).click();
+        waitByName(AddDocumentFields.evernoteExptTest2()).click();
+       // waitByName(AddDocumentFields.progressWheel()).isDisplayed();
+        waitByName(AppMainButtons.navigationCloseButton()).click();
+
+        waitByName(AppMainButtons.menuIcon());
+        findByName(AddDocumentFields.evernoteDocListExptTest2());
+    }
 
     @Test//(priority = 2)
             (enabled = false)
@@ -229,10 +259,24 @@ public class AddDoc extends FindUI {
         waitByName(DocumentListFields.docNavigationOkButton()).click();
         waitByName(DocumentListFields.scanColourImageIcon()).click();
         waitByXpath(DocumentListFields.elementTypeSlider());
-
-
     }
 
+    @AfterClass
+    public void logOutFromAllClouds(){
 
+        findByName(AppMainButtons.menuIcon()).click();
+        findByName(AddDocumentFields.settingsMenuButton()).click();
+        waitByName(AddDocumentFields.settingsCloudStorage()).click();
+
+        findByName(AddDocumentFields.dropboxTitle()).click();
+        findByName(AddDocumentFields.googleDriveTitle()).click();
+        findByName(AddDocumentFields.evernoteTitle()).click();
+
+        findByName(AppMainButtons.navigBackButton()).click();
+        findByName(AppMainButtons.menuIcon()).click();
+        findByName(AppMainButtons.docMenuButton()).click();
+
+        driver.quit();
+    }
 
 }
