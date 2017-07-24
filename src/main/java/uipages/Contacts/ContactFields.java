@@ -3,6 +3,9 @@ package uipages.Contacts;
 
 public class ContactFields {
 
+    public static String contactsTitle(){return "Contacts";}
+    public static String fef1(){return "fef1@mailinator.com";}
+
     public static String noContactIcon(){return "NoContactsPlaceholderImage";}
     public static String noContactText(){return "No Contacts";}
 
@@ -18,6 +21,7 @@ public class ContactFields {
 
     public static String wouldYouLikeToAcessContact(){return "“KeepSolid Sign” Would Like to Access Your Contacts";}
     public static String ksSignUsesContacts(){return "KeepSolid Sign uses contacts";}
+    public static String importContactTitle(){return "Import Contacts";}
 
 
 
