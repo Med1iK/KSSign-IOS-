@@ -7,4 +7,9 @@ public class userInfo {
     public static String userPass = "qwerty";
 
     public static String synced = "Synced";
+
+    public static String userFirstName = "Hello";
+    public static String userLastName = "Dias";
+    public static String addUserEmail = "wse2@mailinator.com";
+
 }

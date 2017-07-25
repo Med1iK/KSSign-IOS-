@@ -5,6 +5,7 @@ public class AppMainButtons {
 
 
     public static String cancelButton(){ return "Cancel";}
+    public static String deleteButton(){ return "Delete";}
     public static String addButton(){return "Add";}
     public static String dontAllowButton(){return "Don’t Allow";}
     public static String allowButton(){return "Allow";}
