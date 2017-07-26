@@ -85,6 +85,32 @@ public class ContactFunctional extends FindUI{
 
 
     @Test(priority = 4)
+    public void editContactFunc(){
+
+        TouchAction action = new TouchAction(driver);
+
+        MobileElement user1 = (MobileElement) waitByName(ContactFields.fef1());
+        MobileElement contactView = (MobileElement) findByXpath(ContactFields.contactView());
+        Dimension size = contactView.getSize();
+        Dimension size1 = user1.getSize();
+        System.out.println(size);
+
+        action
+                .press(user1, size1.width*2,size1.height)
+                .waitAction(111)
+                .moveTo(user1, 1, size1.height)
+                .release()
+                .perform();
+
+        findByName(ContactFields.editContactAction()).click();
+        findByName(ContactFields.addContactFirstName()).sendKeys(updateUserFirstName);
+        findByName(ContactFields.addContactLastName()).click();
+        findByName(ContactFields.addContactLastName()).sendKeys(updateUserLastName);
+        findByName(AppMainButtons.saveButton()).click();
+    }
+
+
+    @Test(priority = 5)
     public void deleteContacts() {
 
         TouchAction action = new TouchAction(driver);
@@ -99,7 +125,7 @@ public class ContactFunctional extends FindUI{
         System.out.println(size);
 
         action
-                .press(user1, size1.width*2,size2.height)
+                .press(user1, size1.width*2,size1.height)
                 .waitAction(111)
                 .moveTo(user1, 1, size1.height)
                 .release()

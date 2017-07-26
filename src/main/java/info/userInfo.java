@@ -12,4 +12,7 @@ public class userInfo {
     public static String userLastName = "Dias";
     public static String addUserEmail = "wse2@mailinator.com";
 
+    public static String updateUserFirstName = "Obi";
+    public static String updateUserLastName = "Wan";
+
 }
