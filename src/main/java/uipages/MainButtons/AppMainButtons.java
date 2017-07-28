@@ -6,6 +6,7 @@ public class AppMainButtons {
 
     public static String cancelButton(){ return "Cancel";}
     public static String deleteButton(){ return "Delete";}
+    public static String nextButton(){ return "Next";}
     public static String addButton(){return "Add";}
     public static String saveButton(){return "Save";}
     public static String dontAllowButton(){return "Don’t Allow";}
@@ -16,6 +17,7 @@ public class AppMainButtons {
 
     public static String returnButton(){return "Return to KeepSolid Sign";}
     public static String navigationCloseButton(){return "NavigationCloseButton";}
+    public static String navigationOkButton(){return "NavigationOkButton";}
     public static String menuIcon(){ return "MenuIcon";}
     public static String syncedStatus(){return "Synced";}
     public static String syncedStatusError(){return "Syncronisation error";}

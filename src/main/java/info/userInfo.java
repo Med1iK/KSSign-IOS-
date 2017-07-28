@@ -15,4 +15,8 @@ public class userInfo {
     public static String updateUserFirstName = "Obi";
     public static String updateUserLastName = "Wan";
 
+
+    //Participants
+    public static String zero = "0";
+
 }
