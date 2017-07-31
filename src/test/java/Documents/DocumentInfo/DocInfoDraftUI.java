@@ -2,6 +2,7 @@ package Documents.DocumentInfo;
 
 
 import findElementMethod.FindUI;
+import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
@@ -16,8 +17,8 @@ import java.net.MalformedURLException;
 import static info.userInfo.*;
 
 
-public class DocInfoDraft extends FindUI{
-    public DocInfoDraft() throws MalformedURLException {
+public class DocInfoDraftUI extends FindUI{
+    public DocInfoDraftUI() throws MalformedURLException {
     }
 
     @BeforeClass
@@ -74,7 +75,7 @@ public class DocInfoDraft extends FindUI{
 
 
     @Test(priority = 3)
-    public void checkUIOfDraftDocInfo(){
+    public void checkUIOfDraftDocInfo() {
 
         findByName(AppMainButtons.navigationCloseButton());
         findByName(AppMainButtons.nextButton());
@@ -108,8 +109,7 @@ public class DocInfoDraft extends FindUI{
         findByName(DocumentInfoFields.addParticipantButton());
 
         System.out.println("UI of Draft Doc info has been checked");
+
+        findByName(AppMainButtons.navigationCloseButton()).click();
     }
-
-
-    //Реализовать правильные сценарий используя в методах "value" с удалением сайнеров или обзерверов
 }

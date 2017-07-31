@@ -60,5 +60,10 @@ public class DocumentInfoFields {
     //DocName
     public static String docNameUnnamed(){return "Unnamed";}
 
+    public static String enterMessageView(){return "enterMessageViewController";}
+    public static String keyboard(){return "Typing Predictions";}
+
+
+
 
 }
