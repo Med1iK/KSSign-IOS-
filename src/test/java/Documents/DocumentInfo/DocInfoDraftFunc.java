@@ -2,6 +2,7 @@ package Documents.DocumentInfo;
 
 import findElementMethod.FindUI;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.TouchAction;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -12,7 +13,9 @@ import uipages.Documents.DocumentViewFields;
 import uipages.MainButtons.AppMainButtons;
 import uipages.MySign.MySignatureFields;
 
+import java.io.IOException;
 import java.net.MalformedURLException;
+import java.time.OffsetDateTime;
 
 import static info.userInfo.*;
 
@@ -73,13 +76,12 @@ public class DocInfoDraftFunc extends FindUI{
         }
     }
 
-    @Test(priority = 3)
+    @Test//(priority = 3)
+            (enabled = false)
     public void enterMessage(){
 
         waitByName(DocumentInfoFields.enterAMessage()).click();
-        //waitByName(DocumentInfoFields.editMessageTitile());
         waitByName(DocumentInfoFields.enterMessageView()).sendKeys(enterMessageText);
-        //findByName(AppMainButtons.navigBackButton()).click();
         findByName(AppMainButtons.navigationCloseButton()).click();
         waitByName(DocumentInfoFields.enterAMessage()).click();
 
@@ -92,15 +94,14 @@ public class DocInfoDraftFunc extends FindUI{
 
         waitByName(DocumentInfoFields.enterAMessage()).click();
         Assert.assertEquals(messageView.getAttribute("value"), enterMessageText);
-        //findByName(AppMainButtons.navigBackButton()).click();
         findByName(AppMainButtons.navigationCloseButton()).click();
     }
 
-    @Test(priority = 4)
+    @Test//(priority = 4)
+            (enabled = false)
     public void checkKeyboardOfEnterMessage(){
 
         findByName(DocumentInfoFields.enterAMessage()).click();
-      //  waitByName(DocumentInfoFields.keyboard()).isEnabled();
         runAppInBAckground();
         waitByName(DocumentInfoFields.editMessageTitile());
 
@@ -110,11 +111,11 @@ public class DocInfoDraftFunc extends FindUI{
         findByName(AppMainButtons.navigationCloseButton()).click();
     }
 
-    @Test(priority = 5)
+    @Test//(priority = 5)
+            (enabled = false)
     public void addSigners(){
 
         findByName(DocumentInfoFields.addParticipantButton()).click();
-        //waitByName(DocumentInfoFields.addParticipantsTitle());
         waitByName(DocumentInfoFields.loadingWheel()).isDisplayed();
 
         findByName(DocumentInfoFields.fef1()).click();
@@ -124,11 +125,11 @@ public class DocInfoDraftFunc extends FindUI{
         waitByName(DocumentInfoFields.inviteAsSigner()).click();
     }
 
-    @Test(priority = 6)
+    @Test//(priority = 6)
+            (enabled = false)
     public void addObservers(){
 
         findByName(DocumentInfoFields.addParticipantButton()).click();
-        //waitByName(DocumentInfoFields.addParticipantsTitle());
         waitByName(DocumentInfoFields.loadingWheel()).isDisplayed();
 
         findByName(DocumentInfoFields.fef87()).click();
@@ -138,7 +139,43 @@ public class DocInfoDraftFunc extends FindUI{
         waitByName(DocumentInfoFields.inviteAsObserver()).click();
     }
 
+    @Test(priority = 7)
+    public void checkSignOrderFunctiona(){
 
+        waitByName(DocumentInfoFields.enterAMessage());         //Don't forget to remove
 
+        TouchAction action = new TouchAction(driver);
 
+        MobileElement signOrderSwitch = (MobileElement) findByName(DocumentInfoFields.signOrderSwitch());
+
+      //  Assert.assertEquals(signOrderSwitch.getAttribute("value"),true);
+        //Assert.assertEquals(signOrderSwitch.getCssValue("value"),1);
+
+        findByName(DocumentInfoFields.fef1NameWithSignOrder());
+        findByName(DocumentInfoFields.fef2NameWithSignOrder());
+
+        signOrderSwitch.click();
+
+        findByName(DocumentInfoFields.fef1NameWithoutSignOrder());
+        findByName(DocumentInfoFields.fef2NameWithoutSignOrder());
+
+        signOrderSwitch.click();
+
+        findByName(DocumentInfoFields.editButtonForSigner()).click();
+
+      //  waitByName(DocumentInfoFields.reorderFef2WithSignOrder1());
+
+        MobileElement reorder1OfFef1 = (MobileElement) findByName(DocumentInfoFields.reorderFef1WithSignOrder1());
+       // MobileElement reorder2OfFef1 = (MobileElement) findByName(DocumentInfoFields.reorderFef1WithSignOrder2());
+       // MobileElement reorder1OfFef2 = (MobileElement) findByName(DocumentInfoFields.reorderFef2WithSignOrder1());
+        MobileElement reorder2OfFef2 = (MobileElement) findByName(DocumentInfoFields.reorderFef2WithSignOrder2());
+
+        action
+                .press(reorder1OfFef1)
+                .waitAction(111)
+                .moveTo(reorder2OfFef2)
+                .release()
+                .perform();
+
+    }
 }

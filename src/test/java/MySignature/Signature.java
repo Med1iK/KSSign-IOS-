@@ -9,6 +9,7 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import uipages.MainButtons.AppMainButtons;
 import uipages.MySign.MySignatureFields;
 
 import java.net.MalformedURLException;
@@ -60,10 +61,10 @@ public class Signature extends FindUI{
     @Test(priority = 2)
     public void checkUIOfMySignScreen(){
 
-        waitByName(MySignatureFields.signMenuButton()).click();
-        waitByName(MySignatureFields.mySignSynced());
-        findByName(MySignatureFields.signMySignMenuButton()).click();
-        findByName(MySignatureFields.signMenuButton());
+        waitByName(AppMainButtons.menuIcon()).click();
+        waitByName(AppMainButtons.syncedStatus());
+        findByName(AppMainButtons.mySignMenuButton()).click();
+        findByName(AppMainButtons.menuIcon());
         System.out.println("Menu button has been located");
         findByName(MySignatureFields.signMySignMenuTitle());
         System.out.println("My Signature Titile has been located");
