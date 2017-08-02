@@ -18,6 +18,7 @@ public class userInfo {
 
     //Participants
     public static String zero = "0";
+    public static String fourth = " 4";
 
     //Enter message text
     public static String enterMessageText = "Hello World! How are you?)";

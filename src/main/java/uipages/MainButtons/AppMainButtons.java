@@ -12,7 +12,11 @@ public class AppMainButtons {
     public static String dontAllowButton(){return "Don’t Allow";}
     public static String allowButton(){return "Allow";}
     public static String okButton(){return "OK";}
+    public static String selectButton(){return "Select";}
     public static String selectAllButton(){return "Select All";}
+    public static String pastButton(){return "Paste";}
+    public static String cutButton(){return "Cut";}
+    public static String copyButton(){return "Copy";}
     public static String loadingWheel(){return "In progress";}
 
     public static String returnButton(){return "Return to KeepSolid Sign";}

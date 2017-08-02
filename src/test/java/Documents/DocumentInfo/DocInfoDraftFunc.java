@@ -15,6 +15,7 @@ import uipages.MySign.MySignatureFields;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.time.Duration;
 import java.time.OffsetDateTime;
 
 import static info.userInfo.*;
@@ -139,17 +140,13 @@ public class DocInfoDraftFunc extends FindUI{
         waitByName(DocumentInfoFields.inviteAsObserver()).click();
     }
 
-    @Test(priority = 7)
+    @Test//(priority = 7)
+            (enabled = false)
     public void checkSignOrderFunctiona(){
 
         waitByName(DocumentInfoFields.enterAMessage());         //Don't forget to remove
 
-        TouchAction action = new TouchAction(driver);
-
         MobileElement signOrderSwitch = (MobileElement) findByName(DocumentInfoFields.signOrderSwitch());
-
-      //  Assert.assertEquals(signOrderSwitch.getAttribute("value"),true);
-        //Assert.assertEquals(signOrderSwitch.getCssValue("value"),1);
 
         findByName(DocumentInfoFields.fef1NameWithSignOrder());
         findByName(DocumentInfoFields.fef2NameWithSignOrder());
@@ -161,21 +158,112 @@ public class DocInfoDraftFunc extends FindUI{
 
         signOrderSwitch.click();
 
-        findByName(DocumentInfoFields.editButtonForSigner()).click();
+        findByName(DocumentInfoFields.fef1NameWithSignOrder());
+        findByName(DocumentInfoFields.fef2NameWithSignOrder());
 
-      //  waitByName(DocumentInfoFields.reorderFef2WithSignOrder1());
+    }
+
+    @Test//(priority = 8)
+            (enabled = false)
+    public void signersEditSignOrderDelete(){
+
+        TouchAction action = new TouchAction(driver);
+        TouchAction action1 = new TouchAction(driver);
+
+        findByName(DocumentInfoFields.editButtonForSigner()).click();
+        waitByName(DocumentInfoFields.signersTitle());
 
         MobileElement reorder1OfFef1 = (MobileElement) findByName(DocumentInfoFields.reorderFef1WithSignOrder1());
-       // MobileElement reorder2OfFef1 = (MobileElement) findByName(DocumentInfoFields.reorderFef1WithSignOrder2());
-       // MobileElement reorder1OfFef2 = (MobileElement) findByName(DocumentInfoFields.reorderFef2WithSignOrder1());
         MobileElement reorder2OfFef2 = (MobileElement) findByName(DocumentInfoFields.reorderFef2WithSignOrder2());
 
         action
                 .press(reorder1OfFef1)
-                .waitAction(111)
+                .waitAction(Duration.ofSeconds(1))
                 .moveTo(reorder2OfFef2)
                 .release()
                 .perform();
 
+        MobileElement reorder2OfFef1 = (MobileElement) findByName(DocumentInfoFields.reorderFef1WithSignOrder2());
+        MobileElement reorder1OfFef2 = (MobileElement) findByName(DocumentInfoFields.reorderFef2WithSignOrder1());
+
+        action1
+                .press(reorder1OfFef2)
+                .waitAction(Duration.ofSeconds(1))
+                .moveTo(reorder2OfFef1)
+                .release()
+                .perform();
+
+        findByName(DocumentInfoFields.deleteFef1WithSignOrder1()).click();
+        waitByName(DocumentInfoFields.deleteButton()).click();
+
+        findByName(DocumentInfoFields.deleteFef2WithSignOrder1()).click();
+        waitByName(DocumentInfoFields.deleteButton()).click();
+
+        findByName(AppMainButtons.navigBackButton()).click();
     }
+
+    @Test//(priority = 9)
+            (enabled = false)
+    public void observersEditDelete(){
+
+        TouchAction action = new TouchAction(driver);
+        TouchAction action1 = new TouchAction(driver);
+
+        waitByName(DocumentInfoFields.editButtonForObserver()).click();
+        waitByName(DocumentInfoFields.observersTitle());
+
+        MobileElement reorderfef87 = (MobileElement) findByName(DocumentInfoFields.reorderFef87());
+        MobileElement reorderfef88 = (MobileElement) findByName(DocumentInfoFields.reorderFef88());
+
+        action
+                .press(reorderfef87)
+                .waitAction(Duration.ofSeconds(1))
+                .moveTo(reorderfef88)
+                .release()
+                .perform();
+
+        action1
+                .press(reorderfef87)
+                .waitAction(Duration.ofSeconds(1))
+                .moveTo(reorderfef88)
+                .release()
+                .perform();
+
+        findByName(DocumentInfoFields.deleteFef87()).click();
+        waitByName(DocumentInfoFields.deleteButton()).click();
+
+        findByName(DocumentInfoFields.deleteFef88()).click();
+        waitByName(DocumentInfoFields.deleteButton()).click();
+
+        findByName(AppMainButtons.navigBackButton()).click();
+    }
+
+    @Test(priority = 10)
+//            (enabled = false)
+    public void renameDoc(){
+
+        TouchAction action = new TouchAction(driver);
+
+        findByName(DocumentInfoFields.docNameUnnamed()).click();
+        findByName(DocumentInfoFields.docNameUnnamed()).sendKeys("ggg");
+
+        findByName(AppMainButtons.doneButton()).click();
+
+
+        findByName(DocumentInfoFields.docNameUnnamedggg()).click();
+        MobileElement docRenameView = (MobileElement) findByName(DocumentInfoFields.docNameUnnamedggg());
+
+        action.longPress(docRenameView)
+                .release()
+                .perform();
+
+        findByName(AppMainButtons.selectButton()).click();
+        findByName(DocumentInfoFields.deleteOnKeyboard()).click();
+        docRenameView.sendKeys("Unnamed");
+        findByName(AppMainButtons.doneButton()).click();
+        findByName(DocumentInfoFields.participants(fourth));
+        System.out.println(findByName(DocumentInfoFields.participants(fourth)));
+
+    }
+
 }

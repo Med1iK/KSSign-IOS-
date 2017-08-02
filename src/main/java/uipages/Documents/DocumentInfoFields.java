@@ -32,13 +32,15 @@ public class DocumentInfoFields {
 
     //Participants
     public static String fef1(){return "fef1@mailinator.com";}
-        public static String fef1NameWithSignOrder(){return "1. Fef1";}
+    public static String fef1NameWithSignOrder(){return "1. Fef1";}
     public static String fef1NameWithoutSignOrder(){return "Fef1";}
     public static String fef2(){return "fef2@mailinator.com";}
     public static String fef2NameWithSignOrder(){return "2. Fef 2";}
     public static String fef2NameWithoutSignOrder(){return "Fef 2";}
     public static String fef87(){return "fef87@binka.me";}
     public static String fef88(){return "fef88@binka.me";}
+    public static String signersTitle(){return "Signers";}
+    public static String observersTitle(){return "Observers";}
 
     //InviteAs
     public static String inviteAsSigner(){return "Invite as a signer";}
@@ -58,8 +60,10 @@ public class DocumentInfoFields {
     public static String deleteButton(){return "Delete";}
     public static String deleteFef1(){return "Delete Fef1, fef1@mailinator.com";}
     public static String deleteFef1WithSignOrder1(){return "Delete 1. Fef1, fef1@mailinator.com";}
+    public static String deleteFef1WithSignOrder2(){return "Delete 2. Fef1, fef1@mailinator.com";}
     public static String deleteFef2(){return "Delete Fef 2, fef2@mailinator.com";}
     public static String deleteFef2WithSignOrder2(){return "Delete 2. Fef 2, fef2@mailinator.com";}
+    public static String deleteFef2WithSignOrder1(){return "Delete 1. Fef 2, fef2@mailinator.com";}
     public static String deleteFef87(){return "Delete Fef 87, fef87@binka.me";}
     public static String deleteFef88(){return "Delete fef 88, fef88@binka.me";}
 
@@ -68,13 +72,19 @@ public class DocumentInfoFields {
     public static String reorderFef1WithSignOrder2(){return "Reorder 2. Fef1, fef1@mailinator.com";}
     public static String reorderFef2WithSignOrder1(){return "Reorder 1. Fef 2, fef2@mailinator.com";}
     public static String reorderFef2WithSignOrder2(){return "Reorder 2. Fef 2, fef2@mailinator.com";}
-
+    public static String reorderFef88(){return "Reorder fef 88, fef88@binka.me";}
+    public static String reorderFef87(){return "Reorder Fef 87, fef87@binka.me";}
 
     //DocName
     public static String docNameUnnamed(){return "Unnamed";}
+    public static String docNameUnnamedggg(){return "Unnamedggg";}
+    public static String docRenameView(){return "//XCUIElementTypeApplication[@name=\"KeepSolid Sign\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeTextView";}
+
 
     public static String enterMessageView(){return "enterMessageViewController";}
     public static String keyboard(){return "Typing Predictions";}
+    public static String deleteOnKeyboard(){return "delete";}
+
 
 
 
